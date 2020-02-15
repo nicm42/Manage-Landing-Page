@@ -1,12 +1,37 @@
+/**********************Variables**********************/
+$mobile: 375px;
+$desktop: 1440px;
+
+$bright-red: hsl(12, 88%, 59%);
+$dark-blue: hsl(228, 39%, 23%);
+
+$dark-greyish-blue: hsl(227, 12%, 61%);
+$very-dark-blue: hsl(233, 12%, 13%);
+$very-pale-red: hsl(13, 100%, 96%);
+$very-light-grey: hsl(0, 0%, 98%);
+
+$body-font-size: 16px;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+/**********************General**********************/
+body{
+	font-family: 'Be Vietnam', sans-serif;
+	font-size: $body-font-size;
+}
+
+/**********************Simplify section**********************/
+.simplify {
+	background: hsl(12, 88%, 59%);
+	background-image: url(images/bg-simplify-section-desktop.svg);
+	background-size: cover;
+}
+
+/**********************Attribution**********************/
 .attribution { 
 	font-size: 11px; text-align: center;
 }
 .attribution a {
 	color: hsl(228, 45%, 44%);
-}
-
-.simplify {
-	background: hsl(12, 88%, 59%);
-	background-image: url(images/bg-simplify-section-desktop.svg);
-	background-size: cover;
 }
