@@ -20,13 +20,38 @@ body{
 	font-family: 'Be Vietnam', sans-serif;
 	font-size: $body-font-size;
 }
+button{
+	color: $very-light-grey;
+	border-radius: 1rem;
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	background-color: $bright-red;
+	border: none;
+	-webkit-box-shadow: 0 0.5rem 0.5rem -0.25rem $bright-red;
+	   -moz-box-shadow: 0 0.5rem 0.5rem -0.25rem $bright-red;
+	        box-shadow: 0 0.5rem 0.5rem -0.25rem $bright-red;
+}
 
-/**********************Simplify section**********************/
+/**********************Header**********************/
+
+/**********************Build**********************/
+
+/**********************Different**********************/
+
+/**********************Testimonials**********************/
+
+
+/**********************Simplify**********************/
 .simplify {
-	background: hsl(12, 88%, 59%);
+	background: $bright-red;
 	background-image: url(images/bg-simplify-section-desktop.svg);
 	background-size: cover;
 }
+.simplify__button{
+	color: $bright-red;
+	background-color: $very-light-grey;
+}
+
+/**********************Footer**********************/
 
 /**********************Attribution**********************/
 .attribution { 
