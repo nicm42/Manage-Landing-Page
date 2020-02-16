@@ -15,6 +15,9 @@ $regular: 400;
 $medium: 500;
 $bold: 700;
 
+$button-paddding: 0.5rem 1rem 0.5rem 1rem;
+$button-radius: 1rem;
+
 /**********************General**********************/
 body{
 	font-family: 'Be Vietnam', sans-serif;
@@ -22,8 +25,8 @@ body{
 }
 button{
 	color: $very-light-grey;
-	border-radius: 1rem;
-	padding: 0.5rem 1rem 0.5rem 1rem;
+	border-radius: $button-radius;
+	padding: $button-paddding;
 	background-color: $bright-red;
 	border: none;
 	-webkit-box-shadow: 0 0.5rem 0.5rem -0.25rem $bright-red;
@@ -34,17 +37,48 @@ button{
 /**********************Header**********************/
 
 /**********************Build**********************/
+.build__header{
+	color: $very-dark-blue;
+}
+.build__text{
+	color: $dark-greyish-blue;
+}
 
 /**********************Different**********************/
+.different__header{
+	color: $very-dark-blue;
+}
+.different__number{
+	color: $very-light-grey;
+	background-color: $bright-red;
+	padding: $button-paddding;
+	border-radius: $button-radius;
+}
+.different__numheader{
+	color: $very-dark-blue;
+	background-color: $very-pale-red;
+}
+.different__text{
+	color: $dark-greyish-blue;
+}
 
 /**********************Testimonials**********************/
-
+.testimonials__header{
+	color: $very-dark-blue;
+}
+.testimonials__name{
+	color: $very-dark-blue;
+}
+.testimonials__text{
+	color: $dark-greyish-blue;
+}
 
 /**********************Simplify**********************/
-.simplify {
+.simplify{
 	background: $bright-red;
 	background-image: url(images/bg-simplify-section-desktop.svg);
 	background-size: cover;
+	color: $very-light-grey;
 }
 .simplify__button{
 	color: $bright-red;
@@ -52,6 +86,13 @@ button{
 }
 
 /**********************Footer**********************/
+footer{
+	background-color: $very-dark-blue;
+	color: $very-light-grey;
+}
+.footer__logo{
+	color: $very-light-grey;
+}
 
 /**********************Attribution**********************/
 .attribution { 
