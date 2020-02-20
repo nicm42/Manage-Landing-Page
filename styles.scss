@@ -100,24 +100,53 @@ button{
 }
 
 /**********************Different**********************/
+.different{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+.different__message{
+	padding: 0.7rem 0.8rem 1.5rem 0rem;
+}
 .different__header{
 	color: $very-dark-blue;
-}
-.different__number{
-	color: $very-light-grey;
-	background-color: $bright-red;
-	padding: $button-paddding;
-	border-radius: $button-radius;
-}
-.different__numheader{
-	color: $very-dark-blue;
-	background-color: $very-pale-red;
-	@media screen and (min-width: $mobile+1){
-		background-color: transparent;
-	}
+	font-weight: bold;
+	font-size: 1.5rem;
+	padding-bottom: 0.7rem;
 }
 .different__text{
 	color: $dark-greyish-blue;
+	line-height: 1.5rem;
+}
+.different__bullet{
+	padding-top: 2rem;
+}
+.different__subheader{
+	display: grid;
+	grid-template-areas: "number numheader";
+	grid-template-columns: auto 1fr;
+}
+.different__number{
+	color: $very-light-grey;
+	font-weight: bold;
+	background-color: $bright-red;
+	padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+	border-radius: $button-radius;
+	grid-area: number;
+}
+.different__numheader{
+	color: $very-dark-blue;
+	font-weight: bold;
+	width: 100%;
+	grid-area: numheader;
+	@media screen and (max-width: $mobile){
+		background-color: $very-pale-red;
+	}
+}
+.different__bullet .different__text{
+	text-align: left;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 }
 
 /**********************Testimonials**********************/
