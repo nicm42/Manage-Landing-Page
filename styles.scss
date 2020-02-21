@@ -104,19 +104,39 @@ button{
 	text-align: center;
 	display: flex;
 	flex-direction: column;
+	@media screen and (min-width: $mobile+1){
+		flex-direction: row;
+		justify-content: space-between;
+	}
 }
 .different__message{
-	padding: 0.7rem 0.8rem 1.5rem 0rem;
+	padding: 0.7rem 4rem 1.5rem 0rem;
+	@media screen and (min-width: $mobile+1){
+		width: 70%;
+		text-align: left;
+		padding-left: 8rem;
+	}
 }
 .different__header{
 	color: $very-dark-blue;
 	font-weight: bold;
 	font-size: 1.5rem;
-	padding-bottom: 0.7rem;
+	padding: 0 0.5rem 0.7rem 0rem;
+	@media screen and (min-width: $mobile+1){
+		font-size: 2rem;
+		line-height: 2.5rem;
+		text-align: left;
+	}
 }
 .different__text{
 	color: $dark-greyish-blue;
 	line-height: 1.5rem;
+}
+.different__bullets{
+	@media screen and (min-width: $mobile+1){
+		text-align: left;
+		padding-right: 7rem;
+	}
 }
 .different__bullet{
 	padding-top: 2rem;
@@ -125,6 +145,14 @@ button{
 	display: grid;
 	grid-template-areas: "number numheader";
 	grid-template-columns: auto 1fr;
+	align-items: center;
+	text-align: left;
+	grid-area: subheader;
+	@media screen and (max-width: $mobile){
+		background-color: $very-pale-red;
+		border-top-left-radius: $button-radius;
+		border-bottom-left-radius: $button-radius;
+	}
 }
 .different__number{
 	color: $very-light-grey;
@@ -139,16 +167,17 @@ button{
 	font-weight: bold;
 	width: 100%;
 	grid-area: numheader;
-	@media screen and (max-width: $mobile){
-		background-color: $very-pale-red;
-	}
+	padding-left: 1rem;
 }
 .different__bullet .different__text{
 	text-align: left;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
+	@media screen and (min-width: $mobile+1){
+		//width: 80%;
+	}
 }
-
+	
 /**********************Testimonials**********************/
 .testimonials__header{
 	color: $very-dark-blue;
@@ -175,7 +204,7 @@ button{
 	@media screen and (min-width: $mobile+1){
 		background-image: url(images/bg-simplify-section-desktop.svg);
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 		padding-top: 3.5rem;
 		padding-bottom: 3.5rem;
@@ -191,6 +220,7 @@ button{
 		padding-bottom: 0rem;
 		width: 40%;
 		text-align: left;
+		margin-left: 7rem;
 	}
 }
 .simplify__button{
@@ -199,6 +229,9 @@ button{
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 	        box-shadow: none;
+	@media screen and (min-width: $mobile+1){
+		margin-right: 7rem;
+	}
 }
 
 /**********************Footer**********************/
