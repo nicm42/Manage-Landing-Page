@@ -193,8 +193,28 @@ button{
 }
 	
 /**********************Testimonials**********************/
+.testimonials{
+	text-align: center;
+}
+.testimonials__slider{
+	display: flex;
+	flex-shrink: 0;
+	overflow-x: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	&::-webkit-scrollbar{
+		height: 0;
+		width: 0;
+		background: transparent;
+	}
+}
 .testimonials__header{
 	color: $very-dark-blue;
+}
+.testimonials__person{
+	margin: 1rem;
+	background-color: $very-light-grey;
+	min-width: 500px;
 }
 .testimonials__name{
 	color: $very-dark-blue;
