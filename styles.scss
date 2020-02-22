@@ -195,8 +195,12 @@ button{
 /**********************Testimonials**********************/
 .testimonials{
 	text-align: center;
+	padding-top: 5rem;
+	padding-bottom: 9rem;
 }
 .testimonials__slider{
+	padding-top: 4rem;
+	margin-bottom: 1rem;
 	display: flex;
 	flex-shrink: 0;
 	overflow-x: auto;
@@ -210,17 +214,38 @@ button{
 }
 .testimonials__header{
 	color: $very-dark-blue;
+	font-size: 1.5rem;
+	font-weight: bold;
+	@media screen and (min-width: $mobile+1){
+		font-size: 2rem;
+	}
 }
 .testimonials__person{
 	margin: 1rem;
 	background-color: $very-light-grey;
-	min-width: 500px;
+	min-width: 100%;
+	position: relative;
+	padding-top: 3rem;
+	@media screen and (min-width: $mobile+1){
+		min-width: 27rem;
+	}
+}
+.testimonials__photo{
+	width: 3.5rem;
+	height: auto;
+	position: absolute;
+	top: -1.6rem;
+	left: 50%;
+	margin-left: -1.6rem;
 }
 .testimonials__name{
 	color: $very-dark-blue;
+	font-weight: bold;
 }
 .testimonials__text{
 	color: $dark-greyish-blue;
+	padding: 0.5rem 2rem 2rem 2rem;
+	line-height: 1.3rem;
 }
 
 /**********************Simplify**********************/
