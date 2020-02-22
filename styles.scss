@@ -102,6 +102,7 @@ button{
 /**********************Different**********************/
 .different{
 	text-align: center;
+	padding-top: 3rem;
 	display: flex;
 	flex-direction: column;
 	@media screen and (min-width: $mobile+1){
@@ -110,42 +111,59 @@ button{
 	}
 }
 .different__message{
-	padding: 0.7rem 4rem 1.5rem 0rem;
+	padding: 0.7rem 1rem 1rem 1rem;
 	@media screen and (min-width: $mobile+1){
 		width: 70%;
 		text-align: left;
-		padding-left: 8rem;
+		padding: 2rem 4rem 1.5rem 8rem;
 	}
 }
 .different__header{
 	color: $very-dark-blue;
 	font-weight: bold;
 	font-size: 1.5rem;
-	padding: 0 0.5rem 0.7rem 0rem;
+	padding-bottom: 0.8rem;
 	@media screen and (min-width: $mobile+1){
 		font-size: 2rem;
-		line-height: 2.5rem;
+		line-height: 2.2rem;
 		text-align: left;
 	}
 }
 .different__text{
 	color: $dark-greyish-blue;
+	font-size: 0.7rem;
 	line-height: 1.5rem;
+	@media screen and (min-width: $mobile+1){
+		font-size: $body-font-size;
+		line-height: 1.5rem;
+		padding-right: 5rem;
+	}
 }
 .different__bullets{
+	font-size: 0.7rem;
 	@media screen and (min-width: $mobile+1){
 		text-align: left;
+		font-size: $body-font-size;
 		padding-right: 7rem;
 	}
 }
 .different__bullet{
 	padding-top: 2rem;
+	text-align: left;
+	display: grid;
+	grid-template-areas: "number numheader"
+						 "bullet-text bullet-text";
+	grid-template-columns: auto 1fr;
+	align-items: center;
+	@media screen and (min-width: $mobile+1){
+		grid-template-areas: "number numheader"
+							 ". bullet-text";
+	}
 }
 .different__subheader{
 	display: grid;
 	grid-template-areas: "number numheader";
 	grid-template-columns: auto 1fr;
-	align-items: center;
 	text-align: left;
 	grid-area: subheader;
 	@media screen and (max-width: $mobile){
@@ -161,20 +179,28 @@ button{
 	padding: 0.5rem 1.2rem 0.5rem 1.2rem;
 	border-radius: $button-radius;
 	grid-area: number;
+	z-index: 1;
 }
 .different__numheader{
 	color: $very-dark-blue;
+	font-size: 0.8rem;
 	font-weight: bold;
-	width: 100%;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	grid-area: numheader;
-	padding-left: 1rem;
+	padding-left: 2rem;
+	margin-left: -1rem;
+	@media screen and (max-width: $mobile){
+		background-color: $very-pale-red;
+	}
 }
 .different__bullet .different__text{
 	text-align: left;
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
+	padding: 0.5rem 0.5rem 0 0.5rem;
+	grid-area: bullet-text;
 	@media screen and (min-width: $mobile+1){
-		//width: 80%;
+		padding-left: 1.2rem;
+		padding-right: 2.5rem;
 	}
 }
 	
