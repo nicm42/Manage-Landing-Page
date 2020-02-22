@@ -160,18 +160,6 @@ button{
 							 ". bullet-text";
 	}
 }
-.different__subheader{
-	display: grid;
-	grid-template-areas: "number numheader";
-	grid-template-columns: auto 1fr;
-	text-align: left;
-	grid-area: subheader;
-	@media screen and (max-width: $mobile){
-		background-color: $very-pale-red;
-		border-top-left-radius: $button-radius;
-		border-bottom-left-radius: $button-radius;
-	}
-}
 .different__number{
 	color: $very-light-grey;
 	font-weight: bold;
