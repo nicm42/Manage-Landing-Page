@@ -42,24 +42,29 @@ button{
 .build{
 	display: grid;
 	grid-template-areas: 
-						"graphs"
-						"message"
-						"button";
-	justify-items: center;
-	align-items: center;
-	grid-gap: 0.5rem;
-	grid-column-gap: 4rem;
+						"build-graphs"
+						"build-message";
+	//justify-items: center;
+	//align-items: center;
+	grid-row-gap: 0.8rem;
 	text-align: center;
-	padding: 0.8rem;
 	@media screen and (min-width: $mobile+1){
-		grid-template-areas:
-							"message graphs"
-							"button graphs";
-		grid-template-columns: 0.6fr auto;
+		grid-template-areas: "build-message build-graphs";
+		grid-template-columns: 0.6fr 0.6fr;
+		grid-column-gap: 4rem;
+		//justify-items: start;
 		text-align: left;
-		justify-content: center;
+		padding-left: 10%;
+		padding-right: 10%;
 	}
 }
+.build__message{
+	grid-area: build-message;
+	@media screen and (min-width: $mobile+1){
+		align-self: end;
+		padding-bottom: 1.5rem;
+	}
+}	
 .build__header{
 	color: $very-dark-blue;
 	font-weight: bold;
@@ -80,42 +85,35 @@ button{
 		width: 80%;
 	}
 }
-.build__message{
-	grid-area: message;
-	@media screen and (min-width: $mobile+1){
-		align-self: end;
-		padding-bottom: 1.5rem;
-	}
-}	
 .build__graphs{
-	grid-area: graphs;
+	grid-area: build-graphs;
 	max-width: 100%;
-}
-.build__button{
-	grid-area: button;
-	@media screen and (min-width: $mobile+1){
-		justify-self: start;
-		align-self: start;
-	}
 }
 
 /**********************Different**********************/
 .different{
 	text-align: center;
 	padding-top: 3rem;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-areas: "different-message"
+						 "different-bullets";
+	//justify-items: center;
 	@media screen and (min-width: $mobile+1){
-		flex-direction: row;
-		justify-content: space-between;
+		grid-template-areas: "different-message different-bullets";
+		grid-template-columns: 0.6fr 0.6fr;
+		grid-column-gap: 4rem;
+		//justify-items: start;
+		padding-left: 10%;
+		padding-right: 10%;
 	}
 }
 .different__message{
+	grid-area: different-message;
 	padding: 0.7rem 1rem 1rem 1rem;
 	@media screen and (min-width: $mobile+1){
-		width: 70%;
+		//width: 70%;
 		text-align: left;
-		padding: 2rem 4rem 1.5rem 8rem;
+		padding: 2rem 0 1.5rem 0;
 	}
 }
 .different__header{
@@ -140,24 +138,25 @@ button{
 	}
 }
 .different__bullets{
+	grid-area: different-bullets;
 	font-size: 0.7rem;
 	@media screen and (min-width: $mobile+1){
 		text-align: left;
 		font-size: $body-font-size;
-		padding-right: 7rem;
+		//padding-right: 7rem;
 	}
 }
 .different__bullet{
 	padding-top: 2rem;
 	text-align: left;
 	display: grid;
-	grid-template-areas: "number numheader"
-						 "bullet-text bullet-text";
+	grid-template-areas: "different-number different-numheader"
+						 "different-bullet-text different-bullet-text";
 	grid-template-columns: auto 1fr;
 	align-items: center;
 	@media screen and (min-width: $mobile+1){
-		grid-template-areas: "number numheader"
-							 ". bullet-text";
+		grid-template-areas: "different-number different-numheader"
+							 ". different-bullet-text";
 	}
 }
 .different__number{
@@ -166,7 +165,7 @@ button{
 	background-color: $bright-red;
 	padding: 0.5rem 1.2rem 0.5rem 1.2rem;
 	border-radius: $button-radius;
-	grid-area: number;
+	grid-area: different-number;
 	z-index: 1;
 }
 .different__numheader{
@@ -175,7 +174,7 @@ button{
 	font-weight: bold;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
-	grid-area: numheader;
+	grid-area: different-numheader;
 	padding-left: 2rem;
 	margin-left: -1rem;
 	@media screen and (max-width: $mobile){
@@ -185,7 +184,7 @@ button{
 .different__bullet .different__text{
 	text-align: left;
 	padding: 0.5rem 0.5rem 0 0.5rem;
-	grid-area: bullet-text;
+	grid-area: different-bullet-text;
 	@media screen and (min-width: $mobile+1){
 		padding-left: 1.2rem;
 		padding-right: 2.5rem;
@@ -278,21 +277,31 @@ button{
 	background-repeat: no-repeat;
 	background-position: left center;
 	color: $very-light-grey;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	//display: flex;
+	//flex-direction: column;
+	//align-items: center;
+	display: grid;
+	grid-template-areas: "simplify-message"
+						  "simplify-button";
 	text-align: center;
-	padding: 4.5rem 1.4rem 5rem 1.4rem;
+	//padding: 4.5rem 1.4rem 5rem 1.4rem;
 	@media screen and (min-width: $mobile+1){
 		background-image: url(images/bg-simplify-section-desktop.svg);
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		padding-top: 3.5rem;
-		padding-bottom: 3.5rem;
+		//flex-direction: row;
+		//justify-content: space-between;
+		//align-items: center;
+		//padding-top: 3.5rem;
+		//padding-bottom: 3.5rem;
+		grid-template-areas: "simplify-message simplify-button";
+		grid-template-columns: 0.6fr 0.6fr;
+		grid-column-gap: 4rem;
+		//justify-items: start;
+		padding-left: 10%;
+		padding-right: 10%;
 	}
 }
 .simplify__message{
+	grid-area: simplify-message;
 	padding-bottom: 1.3rem;
 	font-size: 1.9rem;
 	font-weight: bold;
@@ -300,19 +309,20 @@ button{
 	@media screen and (min-width: $mobile+1){
 		line-height: 2rem;
 		padding-bottom: 0rem;
-		width: 40%;
+		//width: 40%;
 		text-align: left;
-		margin-left: 7rem;
+		//margin-left: 7rem;
 	}
 }
 .simplify__button{
+	grid-area: simplify-button;
 	color: $bright-red;
 	background-color: $very-light-grey;
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 	        box-shadow: none;
 	@media screen and (min-width: $mobile+1){
-		margin-right: 7rem;
+		//margin-right: 7rem;
 	}
 }
 
