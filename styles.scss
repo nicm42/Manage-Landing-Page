@@ -11,13 +11,31 @@ $very-pale-red: hsl(13, 100%, 96%);
 $very-light-grey: hsl(0, 0%, 98%);
 
 $body-font-size: 16px;
-$regular: 400;
-$medium: 500;
-$bold: 700;
+$regular-font: 400;
+$medium-font: 500;
+$bold-font: 700;
 
 $button-radius: 1.5rem;
 $button-paddding: 0.7rem 1.6rem 0.7rem 1.6rem;
 $button-shadow: 0 0.5rem 0.5rem -0.25rem;
+
+$grid-column-size: 0.6fr 0.6fr;
+$column-gap: 4rem;
+$row-gap: 0.8rem;
+
+$page-edge: 10%;
+
+$h1-size-mobile: 2rem;
+$h1-line-mobile: $h1-size-mobile + 0.5;
+$h1-size-desktop: $h1-size-mobile + 0.8;
+$h1-line-desktop: $h1-size-desktop + 0.4;
+
+$h2-size-mobile: 1.5rem;
+$h2-size-desktop: $h2-size-mobile + 0.5;
+$h2-line-desktop: $h2-size-desktop + 0.2;
+
+$text-width: 66%;
+
 
 /**********************General**********************/
 body{
@@ -26,7 +44,7 @@ body{
 }
 button{
 	color: $very-light-grey;
-	font-weight: bold;
+	font-weight: $bold-font;
 	border-radius: $button-radius;
 	padding: $button-paddding;
 	background-color: $bright-red;
@@ -44,38 +62,28 @@ button{
 	grid-template-areas: 
 						"build-graphs"
 						"build-message";
-	//justify-items: center;
-	//align-items: center;
-	grid-row-gap: 0.8rem;
+	grid-row-gap: $row-gap;
 	text-align: center;
 	@media screen and (min-width: $mobile+1){
 		grid-template-areas: "build-message build-graphs";
-		grid-template-columns: 0.6fr 0.6fr;
-		grid-column-gap: 4rem;
-		//justify-items: start;
+		grid-template-columns: $grid-column-size;
+		grid-column-gap: $column-gap;
 		align-items: center;
 		text-align: left;
-		padding-left: 10%;
-		padding-right: 10%;
+		padding: 0 $page-edge 0 $page-edge;
 	}
 }
 .build__message{
 	grid-area: build-message;
-	@media screen and (min-width: $mobile+1){
-		//align-self: center;
-		padding-bottom: 1.5rem;
-	}
 }	
 .build__header{
 	color: $very-dark-blue;
-	font-weight: bold;
-	font-size: 2rem;
-	line-height: 2.5rem;
-	padding-bottom: 0.5rem;
+	font-weight: $bold-font;
+	font-size: $h1-size-mobile;
+	line-height: $h1-line-mobile;
 	@media screen and (min-width: $mobile+1){
-		font-size: 2.8rem;
-		line-height: 3.2rem;
-		padding-bottom: 1.7rem;
+		font-size: $h1-size-desktop;
+		line-height: $h1-line-desktop;
 	}
 }
 .build__text{
@@ -83,7 +91,7 @@ button{
 	padding-bottom: 1rem;
 	@media screen and (min-width: $mobile+1){
 		padding-bottom: 1.7rem;
-		width: 80%;
+		width: $text-width;
 	}
 }
 .build__graphs{
@@ -98,33 +106,28 @@ button{
 	display: grid;
 	grid-template-areas: "different-message"
 						 "different-bullets";
-	//justify-items: center;
 	@media screen and (min-width: $mobile+1){
 		grid-template-areas: "different-message different-bullets";
-		grid-template-columns: 0.6fr 0.6fr;
-		grid-column-gap: 4rem;
-		//justify-items: start;
-		padding-left: 10%;
-		padding-right: 10%;
+		grid-template-columns: $grid-column-size;
+		grid-column-gap: $column-gap;
+		padding: 4.5rem $page-edge 0 $page-edge;
 	}
 }
 .different__message{
 	grid-area: different-message;
 	padding: 0.7rem 1rem 1rem 1rem;
 	@media screen and (min-width: $mobile+1){
-		//width: 70%;
 		text-align: left;
 		padding: 2rem 0 1.5rem 0;
 	}
 }
 .different__header{
 	color: $very-dark-blue;
-	font-weight: bold;
-	font-size: 1.5rem;
-	padding-bottom: 0.8rem;
+	font-weight: $bold-font;
+	font-size: $h2-size-mobile;
 	@media screen and (min-width: $mobile+1){
-		font-size: 2rem;
-		line-height: 2.2rem;
+		font-size: $h2-size-desktop;
+		line-height: $h2-line-desktop;
 		text-align: left;
 	}
 }
@@ -134,8 +137,9 @@ button{
 	line-height: 1.5rem;
 	@media screen and (min-width: $mobile+1){
 		font-size: $body-font-size;
-		line-height: 1.5rem;
+		width: $text-width;
 		padding-right: 5rem;
+		line-height: 1.3rem;
 	}
 }
 .different__bullets{
@@ -144,7 +148,6 @@ button{
 	@media screen and (min-width: $mobile+1){
 		text-align: left;
 		font-size: $body-font-size;
-		//padding-right: 7rem;
 	}
 }
 .different__bullet{
@@ -162,7 +165,7 @@ button{
 }
 .different__number{
 	color: $very-light-grey;
-	font-weight: bold;
+	font-weight: $bold-font;
 	background-color: $bright-red;
 	padding: 0.5rem 1.2rem 0.5rem 1.2rem;
 	border-radius: $button-radius;
@@ -172,31 +175,29 @@ button{
 .different__numheader{
 	color: $very-dark-blue;
 	font-size: 0.8rem;
-	font-weight: bold;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
+	font-weight: $bold-font;
+	padding: 0.5rem 0 0.5rem 2rem;
 	grid-area: different-numheader;
-	padding-left: 2rem;
 	margin-left: -1rem;
 	@media screen and (max-width: $mobile){
 		background-color: $very-pale-red;
 	}
 }
-.different__bullet .different__text{
+.different__bullettext{
+	color: $dark-greyish-blue;
+	line-height: 1.3rem;
 	text-align: left;
 	padding: 0.5rem 0.5rem 0 0.5rem;
 	grid-area: different-bullet-text;
 	@media screen and (min-width: $mobile+1){
-		padding-left: 1.2rem;
-		padding-right: 2.5rem;
+		padding: 0.5rem 0 0 1rem;
 	}
 }
 	
 /**********************Testimonials**********************/
 .testimonials{
 	text-align: center;
-	padding-top: 5rem;
-	padding-bottom: 2rem;
+	padding: 5rem 0 2rem 0;
 	@media screen and (min-width: $mobile+1){
 		padding-bottom: 9rem;
 	}
@@ -220,7 +221,7 @@ button{
 .testimonials__header{
 	color: $very-dark-blue;
 	font-size: 1.5rem;
-	font-weight: bold;
+	font-weight: $bold-font;
 	@media screen and (min-width: $mobile+1){
 		font-size: 2rem;
 	}
@@ -246,7 +247,7 @@ button{
 }
 .testimonials__name{
 	color: $very-dark-blue;
-	font-weight: bold;
+	font-weight: $bold-font;
 }
 .testimonials__text{
 	color: $dark-greyish-blue;
@@ -270,6 +271,9 @@ button{
 	margin: 0.1rem;
 	cursor: pointer;
 }
+.filled-dot{
+	background-color: $bright-red;
+}
 
 /**********************Simplify**********************/
 .simplify{
@@ -278,9 +282,6 @@ button{
 	background-repeat: no-repeat;
 	background-position: 12rem bottom;
 	color: $very-light-grey;
-	//display: flex;
-	//flex-direction: column;
-	//align-items: center;
 	display: grid;
 	grid-template-areas: "simplify-message"
 						  "simplify-button";
@@ -288,33 +289,23 @@ button{
 	padding: 4.5rem 1.4rem 5rem 1.4rem;
 	@media screen and (min-width: $mobile+1){
 		background-image: url(images/bg-simplify-section-desktop.svg);
-		//flex-direction: row;
-		//justify-content: space-between;
-		//align-items: center;
-		//padding-top: 3.5rem;
-		//padding-bottom: 3.5rem;
 		grid-template-areas: "simplify-message simplify-button";
-		grid-template-columns: 0.6fr 0.6fr;
-		grid-column-gap: 4rem;
-		//justify-items: start;
+		grid-template-columns: $grid-column-size;
+		grid-column-gap: $column-gap;
 		align-items: center;
-		padding-left: 10%;
-		padding-right: 10%;
-		padding: 3.5rem 10% 3.5rem 10%;
+		padding: 3.5rem $page-edge 3.5rem $page-edge;
 	}
 }
 .simplify__message{
 	grid-area: simplify-message;
 	padding-bottom: 1.3rem;
 	font-size: 1.9rem;
-	font-weight: bold;
+	font-weight: $bold-font;
 	line-height: 2.5rem;
 	@media screen and (min-width: $mobile+1){
 		line-height: 2rem;
 		padding-bottom: 0rem;
-		//width: 40%;
 		text-align: left;
-		//margin-left: 7rem;
 	}
 }
 .simplify__button{
@@ -325,7 +316,6 @@ button{
 	   -moz-box-shadow: none;
 	        box-shadow: none;
 	@media screen and (min-width: $mobile+1){
-		//margin-right: 7rem;
 		justify-self: end;
 	}
 }
