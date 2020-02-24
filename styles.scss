@@ -53,6 +53,7 @@ button{
 		grid-template-columns: 0.6fr 0.6fr;
 		grid-column-gap: 4rem;
 		//justify-items: start;
+		align-items: center;
 		text-align: left;
 		padding-left: 10%;
 		padding-right: 10%;
@@ -61,7 +62,7 @@ button{
 .build__message{
 	grid-area: build-message;
 	@media screen and (min-width: $mobile+1){
-		align-self: end;
+		//align-self: center;
 		padding-bottom: 1.5rem;
 	}
 }	
@@ -72,8 +73,8 @@ button{
 	line-height: 2.5rem;
 	padding-bottom: 0.5rem;
 	@media screen and (min-width: $mobile+1){
-		font-size: 2.5rem;
-		line-height: 3rem;
+		font-size: 2.8rem;
+		line-height: 3.2rem;
 		padding-bottom: 1.7rem;
 	}
 }
@@ -81,7 +82,7 @@ button{
 	color: $dark-greyish-blue;
 	padding-bottom: 1rem;
 	@media screen and (min-width: $mobile+1){
-		padding-bottom: 0;
+		padding-bottom: 1.7rem;
 		width: 80%;
 	}
 }
@@ -275,7 +276,7 @@ button{
 	background: $bright-red;
 	background-image: url(images/bg-simplify-section-mobile.svg);
 	background-repeat: no-repeat;
-	background-position: left center;
+	background-position: 12rem bottom;
 	color: $very-light-grey;
 	//display: flex;
 	//flex-direction: column;
@@ -284,7 +285,7 @@ button{
 	grid-template-areas: "simplify-message"
 						  "simplify-button";
 	text-align: center;
-	//padding: 4.5rem 1.4rem 5rem 1.4rem;
+	padding: 4.5rem 1.4rem 5rem 1.4rem;
 	@media screen and (min-width: $mobile+1){
 		background-image: url(images/bg-simplify-section-desktop.svg);
 		//flex-direction: row;
@@ -296,8 +297,10 @@ button{
 		grid-template-columns: 0.6fr 0.6fr;
 		grid-column-gap: 4rem;
 		//justify-items: start;
+		align-items: center;
 		padding-left: 10%;
 		padding-right: 10%;
+		padding: 3.5rem 10% 3.5rem 10%;
 	}
 }
 .simplify__message{
@@ -323,6 +326,7 @@ button{
 	        box-shadow: none;
 	@media screen and (min-width: $mobile+1){
 		//margin-right: 7rem;
+		justify-self: end;
 	}
 }
 
