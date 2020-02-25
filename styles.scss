@@ -49,9 +49,7 @@ button{
 	padding: $button-paddding;
 	background-color: $bright-red;
 	border: none;
-	-webkit-box-shadow: $button-shadow $bright-red;
-	   -moz-box-shadow: $button-shadow $bright-red;
-	        box-shadow: $button-shadow $bright-red;
+    box-shadow: $button-shadow $bright-red;
 }
 
 /**********************Header**********************/
@@ -220,10 +218,10 @@ button{
 }
 .testimonials__header{
 	color: $very-dark-blue;
-	font-size: 1.5rem;
+	font-size: $h2-size-mobile;
 	font-weight: $bold-font;
 	@media screen and (min-width: $mobile+1){
-		font-size: 2rem;
+		font-size: $h2-size-desktop;
 	}
 }
 .testimonials__person{
@@ -280,15 +278,17 @@ button{
 	background: $bright-red;
 	background-image: url(images/bg-simplify-section-mobile.svg);
 	background-repeat: no-repeat;
-	background-position: 12rem bottom;
+	background-position: left center;
 	color: $very-light-grey;
 	display: grid;
 	grid-template-areas: "simplify-message"
 						  "simplify-button";
+	justify-items: center;
 	text-align: center;
 	padding: 4.5rem 1.4rem 5rem 1.4rem;
 	@media screen and (min-width: $mobile+1){
 		background-image: url(images/bg-simplify-section-desktop.svg);
+		background-position: 12rem bottom;
 		grid-template-areas: "simplify-message simplify-button";
 		grid-template-columns: $grid-column-size;
 		grid-column-gap: $column-gap;
@@ -324,15 +324,44 @@ button{
 footer{
 	background-color: $very-dark-blue;
 	color: $very-light-grey;
+	display: grid;
+	grid-template-areas: "footer-updates footer-updates"
+						 "footer-linksleft footer-linksright"
+						 "footer-social footer-social"
+						 "footer-logo footer-logo"
+						 "footer-copyright footer-copyright";
+	grid-row-gap: 2rem;	
+	justify-items: center;
+	padding-top: 2rem;
 }
 .footer__logo{
 	color: $very-light-grey;
+	grid-area: footer-logo;
 }
-
-/**********************Attribution**********************/
-.attribution { 
-	font-size: 11px; text-align: center;
+.footer__social{
+	grid-area: footer-social;
 }
-.attribution a {
-	color: hsl(228, 45%, 44%);
+.footer__links{
+	list-style-type: none;
+}
+.footer__linksleft{
+	grid-area: footer-linksleft;
+}
+.footer__linksright{
+	grid-area: footer-linksright;
+}
+.footer__updates{
+	grid-area: footer-updates;
+}
+.footer__input{
+	border-radius: $button-radius;
+	padding: 0.5rem;	
+}
+.footer__submit{
+	@extend button;	
+	box-shadow: none;
+	text-transform: uppercase;
+}
+.footer__copyright{
+	grid-area: footer-copyright;
 }

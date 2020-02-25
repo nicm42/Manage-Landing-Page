@@ -11,10 +11,10 @@
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <link href="https://fonts.googleapis.com/css?family=Be+Vietnam:400,500,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-    <!--<style>
+    <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>-->
+  </style>
 </head>
 <body>
 
@@ -132,22 +132,22 @@
       <img src="images/icon-pinterest.svg" alt="Pinterest">
       <img src="images/icon-instagram.svg" alt="instagram">      
     </div>
-    <div class="footer__links">
-      <div class="footer__linksleft">
-        Home
-        Pricing
-        Products
-        About Us
-      </div>
-      <div class="footer__linksright">
-        Careers
-        Community
-        Privacy Policy
-      </div>
-    </div>
+    <ul class="footer__linksleft footer__links">
+      <li>Home</li>
+      <li>Pricing</li>
+      <li>Products</li>
+      <li>About Us</li>
+    </ul>
+    <ul class="footer__linksright footer__links">
+      <li>Careers</li>
+      <li>Community</li>
+      <li>Privacy Policy</li>
+    </ul>
 
-    <input class="footer__updates">Updates in your inbox…
-    Go</input>
+    <div class="footer__updates">
+      <input type="text" class="footer__input" name="footer__input" placeholder="Updates in your inbox…">
+      <input type="button" class="footer__submit" name="footer__submit" value="Go">
+    </div>
 
     <div class="footer__copyright">Copyright 2020. All Rights Reserved</div>
   </footer>
