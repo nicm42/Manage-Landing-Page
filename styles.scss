@@ -335,14 +335,24 @@ footer{
 	padding-top: 2rem;
 }
 .footer__logo{
-	color: $very-light-grey;
 	grid-area: footer-logo;
+	color: $very-light-grey; //TODO this doesn't work, filter changes the squares as well
 }
 .footer__social{
 	grid-area: footer-social;
+	justify-self: stretch;
+	img{
+		width: 10%;
+		padding: 0.7rem;
+	}	
 }
 .footer__links{
+	justify-self: stretch;
 	list-style-type: none;
+	font-size: 0.7rem;
+	li{
+		margin-bottom: 0.5rem;
+	}
 }
 .footer__linksleft{
 	grid-area: footer-linksleft;
@@ -355,6 +365,7 @@ footer{
 }
 .footer__input{
 	border-radius: $button-radius;
+	border-style: solid;
 	padding: 0.5rem;	
 }
 .footer__submit{
@@ -364,4 +375,6 @@ footer{
 }
 .footer__copyright{
 	grid-area: footer-copyright;
+	color: $dark-greyish-blue;
+	font-size: 0.6rem;
 }
