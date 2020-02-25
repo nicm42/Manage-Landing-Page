@@ -1,6 +1,5 @@
 /**********************Variables**********************/
-$mobile: 375px;
-$desktop: 1440px;
+$mobile: 640px;
 
 $bright-red: hsl(12, 88%, 59%);
 $dark-blue: hsl(228, 39%, 23%);
@@ -325,56 +324,133 @@ footer{
 	background-color: $very-dark-blue;
 	color: $very-light-grey;
 	display: grid;
-	grid-template-areas: "footer-updates footer-updates"
+	/*grid-template-areas: "footer-updates footer-updates"
 						 "footer-linksleft footer-linksright"
 						 "footer-social footer-social"
 						 "footer-logo footer-logo"
-						 "footer-copyright footer-copyright";
-	grid-row-gap: 2rem;	
+						 "footer-copyright footer-copyright";*/
+	grid-template-areas: "footer-updates"
+						 "footer-links"
+						 "footer-social"
+						 "footer-logo"
+						 "footer-copyright";
+	grid-row-gap: 2.5rem;
 	justify-items: center;
-	padding-top: 2rem;
+	padding: 2.5rem 0 2rem 0;
+	@media screen and (min-width: $mobile+1){
+		/*grid-template-areas: "footer-logo footer-linksleft footer-linksright footer-updates"
+							 "footer-social footer-linksleft footer-linksright footer-copyright";*/
+		grid-template-areas: "footer-logo footer-links footer-updates"
+							 "footer-social footer-links footer-copyright";
+		grid-row-gap: 0;
+		align-items: start;
+		padding: 3.2rem $page-edge 2rem $page-edge;
+	}
 }
 .footer__logo{
 	grid-area: footer-logo;
-	color: $very-light-grey; //TODO this doesn't work, filter changes the squares as well
+	@media screen and (min-width: $mobile+1){
+		justify-self: start;
+	}
+
 }
 .footer__social{
 	grid-area: footer-social;
-	justify-self: stretch;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	@media screen and (max-width: $mobile){
+		width: 100%;
+	}
+	@media screen and (min-width: $mobile+1){
+		justify-self: start;
+	}		
 	img{
-		width: 10%;
-		padding: 0.7rem;
-	}	
+		padding: 0.3rem;
+		&:first-of-type{
+			@media screen and (min-width: $mobile+1){
+				padding-left: 0;
+			}
+		}
+		@media screen and (max-width: $mobile){
+			width: 10%;
+			padding: 0.7rem;
+		}
+	}
 }
 .footer__links{
+	//justify-self: stretch;
+	//list-style-type: none;
 	justify-self: stretch;
-	list-style-type: none;
+	display: flex;
+	flex-wrap: nowrap;
 	font-size: 0.7rem;
+	justify-content: space-around;
+	//margin-top: 0;
+	@media screen and (min-width: $mobile+1){
+		justify-content: space-between;
+	}
+	ul{
+		list-style-type: none;
+	}
 	li{
 		margin-bottom: 0.5rem;
+		@media screen and (min-width: $mobile+1){
+			margin-bottom: 0.7rem;
+		}
 	}
 }
 .footer__linksleft{
+	padding-left: 0;
+}
+/*.footer__linksleft{
 	grid-area: footer-linksleft;
+	padding-left: 3rem;
+	@media screen and (min-width: $mobile+1){
+		justify-self: start;
+		padding-left: 0;
+	}
 }
 .footer__linksright{
 	grid-area: footer-linksright;
-}
+	@media screen and (min-width: $mobile+1){
+		justify-self: center;
+	}
+}*/
 .footer__updates{
 	grid-area: footer-updates;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	@media screen and (max-width: $mobile){
+		width: 100%;
+	}
+	@media screen and (min-width: $mobile+1){
+		justify-self: end;
+	}
+
 }
 .footer__input{
 	border-radius: $button-radius;
 	border-style: solid;
-	padding: 0.5rem;	
+	padding: 0.5rem;
+	@media screen and (max-width: $mobile){
+		width: 55%;
+	}
 }
 .footer__submit{
 	@extend button;	
 	box-shadow: none;
-	text-transform: uppercase;
+	margin-left: 0.1rem;
+	@media screen and (max-width: $mobile){
+		text-transform: uppercase;
+	}
 }
 .footer__copyright{
 	grid-area: footer-copyright;
 	color: $dark-greyish-blue;
 	font-size: 0.6rem;
+	@media screen and (min-width: $mobile+1){
+		justify-self: end;
+	}
 }
