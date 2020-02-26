@@ -37,6 +37,11 @@ $text-width: 66%;
 
 
 /**********************General**********************/
+html{
+	margin: 0;
+	padding: 0;
+}
+
 body{
 	font-family: 'Be Vietnam', sans-serif;
 	font-size: $body-font-size;
@@ -324,11 +329,6 @@ footer{
 	background-color: $very-dark-blue;
 	color: $very-light-grey;
 	display: grid;
-	/*grid-template-areas: "footer-updates footer-updates"
-						 "footer-linksleft footer-linksright"
-						 "footer-social footer-social"
-						 "footer-logo footer-logo"
-						 "footer-copyright footer-copyright";*/
 	grid-template-areas: "footer-updates"
 						 "footer-links"
 						 "footer-social"
@@ -338,11 +338,8 @@ footer{
 	justify-items: center;
 	padding: 2.5rem 0 2rem 0;
 	@media screen and (min-width: $mobile+1){
-		/*grid-template-areas: "footer-logo footer-linksleft footer-linksright footer-updates"
-							 "footer-social footer-linksleft footer-linksright footer-copyright";*/
 		grid-template-areas: "footer-logo footer-links footer-updates"
 							 "footer-social footer-links footer-copyright";
-		grid-row-gap: 0;
 		align-items: start;
 		padding: 3.2rem $page-edge 2rem $page-edge;
 	}
@@ -379,15 +376,13 @@ footer{
 	}
 }
 .footer__links{
-	//justify-self: stretch;
-	//list-style-type: none;
 	justify-self: stretch;
 	display: flex;
 	flex-wrap: nowrap;
 	font-size: 0.7rem;
 	justify-content: space-around;
-	//margin-top: 0;
 	@media screen and (min-width: $mobile+1){
+		grid-row: 1 / span 2;
 		justify-content: space-between;
 	}
 	ul{
@@ -400,23 +395,10 @@ footer{
 		}
 	}
 }
-.footer__linksleft{
-	padding-left: 0;
+.footer__links ul{
+	margin: 0;
+	padding: 0;
 }
-/*.footer__linksleft{
-	grid-area: footer-linksleft;
-	padding-left: 3rem;
-	@media screen and (min-width: $mobile+1){
-		justify-self: start;
-		padding-left: 0;
-	}
-}
-.footer__linksright{
-	grid-area: footer-linksright;
-	@media screen and (min-width: $mobile+1){
-		justify-self: center;
-	}
-}*/
 .footer__updates{
 	grid-area: footer-updates;
 	display: flex;
@@ -441,7 +423,7 @@ footer{
 .footer__submit{
 	@extend button;	
 	box-shadow: none;
-	margin-left: 0.1rem;
+	margin-left: 0.3rem;
 	@media screen and (max-width: $mobile){
 		text-transform: uppercase;
 	}
