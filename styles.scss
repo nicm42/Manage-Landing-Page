@@ -13,6 +13,7 @@ $body-font-size: 16px;
 $regular-font: 400;
 $medium-font: 500;
 $bold-font: 700;
+$small-text: 0.7rem;
 
 $button-radius: 1.5rem;
 $button-paddding: 0.7rem 1.6rem 0.7rem 1.6rem;
@@ -57,7 +58,55 @@ button{
 }
 
 /**********************Header**********************/
-
+header{
+	display: grid;
+	grid-template-areas: "header-logo nav";
+	padding-top: 2rem;
+	@media screen and (min-width: $mobile+1){
+		grid-template-areas: "header-logo nav header-button";
+		grid-template-columns: auto 0.6fr auto;
+		padding: 2rem $page-edge 0 $page-edge;
+	}
+}
+.header__logo{
+	grid-area: header-logo;
+}
+nav{
+	grid-area: nav;
+	justify-self: end;
+	color: dark-blue;
+	font-size: $small-text;
+	@media screen and (min-width: $mobile+1){
+		justify-self: stretch;
+	}
+}
+.header__hamburger{
+	@media screen and (min-width: $mobile+1){
+		display: none;
+	}	
+}
+.nav__links{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+	@media screen and (max-width: $mobile){
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		display: none;
+	}
+}
+.header__button{
+	grid-area: header-button;
+	justify-self: end;
+	@media screen and (max-width: $mobile){
+		display: none;
+	}
+}
 /**********************Build**********************/
 .build{
 	display: grid;
@@ -135,7 +184,7 @@ button{
 }
 .different__text{
 	color: $dark-greyish-blue;
-	font-size: 0.7rem;
+	font-size: $small-text;
 	line-height: 1.5rem;
 	@media screen and (min-width: $mobile+1){
 		font-size: $body-font-size;
@@ -146,7 +195,7 @@ button{
 }
 .different__bullets{
 	grid-area: different-bullets;
-	font-size: 0.7rem;
+	font-size: $small-text;
 	@media screen and (min-width: $mobile+1){
 		text-align: left;
 		font-size: $body-font-size;
@@ -379,7 +428,7 @@ footer{
 	justify-self: stretch;
 	display: flex;
 	flex-wrap: nowrap;
-	font-size: 0.7rem;
+	font-size: $small-text;
 	justify-content: space-around;
 	@media screen and (min-width: $mobile+1){
 		grid-row: 1 / span 2;
