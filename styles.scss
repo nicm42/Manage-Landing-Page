@@ -13,7 +13,9 @@ $body-font-size: 16px;
 $regular-font: 400;
 $medium-font: 500;
 $bold-font: 700;
+
 $small-text: 0.7rem;
+$very-small-text: 0.6rem;
 
 $button-radius: 1.5rem;
 $button-paddding: 0.7rem 1.6rem 0.7rem 1.6rem;
@@ -23,9 +25,10 @@ $grid-column-size: 0.6fr 0.6fr;
 $column-gap: 4rem;
 $row-gap: 0.8rem;
 
-$page-edge: 10%;
+$page-edge-desktop: 10%;
+$page-edge-mobile: 5%;
 
-$h1-size-mobile: 2rem;
+$h1-size-mobile: 1.9rem;
 $h1-line-mobile: $h1-size-mobile + 0.5;
 $h1-size-desktop: $h1-size-mobile + 0.8;
 $h1-line-desktop: $h1-size-desktop + 0.4;
@@ -61,11 +64,12 @@ button{
 header{
 	display: grid;
 	grid-template-areas: "header-logo nav";
-	padding-top: 2rem;
+	align-items: center;
+	padding: 2rem $page-edge-mobile 2rem $page-edge-mobile;
 	@media screen and (min-width: $mobile+1){
 		grid-template-areas: "header-logo nav header-button";
 		grid-template-columns: auto 0.6fr auto;
-		padding: 2rem $page-edge 0 $page-edge;
+		padding: 2.5rem $page-edge-desktop 5rem $page-edge-desktop;
 	}
 }
 .header__logo{
@@ -75,7 +79,7 @@ nav{
 	grid-area: nav;
 	justify-self: end;
 	color: dark-blue;
-	font-size: $small-text;
+	font-size: $very-small-text;
 	@media screen and (min-width: $mobile+1){
 		justify-self: stretch;
 	}
@@ -113,15 +117,13 @@ nav{
 	grid-template-areas: 
 						"build-graphs"
 						"build-message";
-	grid-row-gap: $row-gap;
 	text-align: center;
+	padding: 0 $page-edge-mobile 0 $page-edge-mobile;
 	@media screen and (min-width: $mobile+1){
 		grid-template-areas: "build-message build-graphs";
 		grid-template-columns: $grid-column-size;
-		grid-column-gap: $column-gap;
-		align-items: center;
 		text-align: left;
-		padding: 0 $page-edge 0 $page-edge;
+		padding: 0 $page-edge-desktop 0 $page-edge-desktop;
 	}
 }
 .build__message{
@@ -132,6 +134,7 @@ nav{
 	font-weight: $bold-font;
 	font-size: $h1-size-mobile;
 	line-height: $h1-line-mobile;
+	margin: 0 0 0.5rem 0;
 	@media screen and (min-width: $mobile+1){
 		font-size: $h1-size-desktop;
 		line-height: $h1-line-desktop;
@@ -139,9 +142,8 @@ nav{
 }
 .build__text{
 	color: $dark-greyish-blue;
-	padding-bottom: 1rem;
+	padding-bottom: 1.7rem;
 	@media screen and (min-width: $mobile+1){
-		padding-bottom: 1.7rem;
 		width: $text-width;
 	}
 }
@@ -153,7 +155,7 @@ nav{
 /**********************Different**********************/
 .different{
 	text-align: center;
-	padding-top: 3rem;
+	padding-top: 2.5rem;
 	display: grid;
 	grid-template-areas: "different-message"
 						 "different-bullets";
@@ -161,12 +163,13 @@ nav{
 		grid-template-areas: "different-message different-bullets";
 		grid-template-columns: $grid-column-size;
 		grid-column-gap: $column-gap;
-		padding: 4.5rem $page-edge 0 $page-edge;
+		padding: 4.5rem $page-edge-desktop 0 $page-edge-desktop;
 	}
 }
 .different__message{
 	grid-area: different-message;
-	padding: 0.7rem 1rem 1rem 1rem;
+	//padding: 0.7rem 1rem 1rem 1rem;
+	padding: 0 $page-edge-mobile 0 $page-edge-mobile;
 	@media screen and (min-width: $mobile+1){
 		text-align: left;
 		padding: 2rem 0 1.5rem 0;
@@ -248,7 +251,7 @@ nav{
 /**********************Testimonials**********************/
 .testimonials{
 	text-align: center;
-	padding: 5rem 0 2rem 0;
+	padding: 2rem 0 2rem 0;
 	@media screen and (min-width: $mobile+1){
 		padding-bottom: 9rem;
 	}
@@ -338,7 +341,7 @@ nav{
 						  "simplify-button";
 	justify-items: center;
 	text-align: center;
-	padding: 4.5rem 1.4rem 5rem 1.4rem;
+	padding: 4.5rem $page-edge-mobile 5rem $page-edge-mobile;
 	@media screen and (min-width: $mobile+1){
 		background-image: url(images/bg-simplify-section-desktop.svg);
 		background-position: 12rem bottom;
@@ -346,7 +349,7 @@ nav{
 		grid-template-columns: $grid-column-size;
 		grid-column-gap: $column-gap;
 		align-items: center;
-		padding: 3.5rem $page-edge 3.5rem $page-edge;
+		padding: 3.5rem $page-edge-desktop 3.5rem $page-edge-desktop;
 	}
 }
 .simplify__message{
@@ -390,7 +393,7 @@ footer{
 		grid-template-areas: "footer-logo footer-links footer-updates"
 							 "footer-social footer-links footer-copyright";
 		align-items: start;
-		padding: 3.2rem $page-edge 2rem $page-edge;
+		padding: 3.2rem $page-edge-desktop 2rem $page-edge-desktop;
 	}
 }
 .footer__logo{
@@ -480,7 +483,7 @@ footer{
 .footer__copyright{
 	grid-area: footer-copyright;
 	color: $dark-greyish-blue;
-	font-size: 0.6rem;
+	font-size: $very-small-text;
 	@media screen and (min-width: $mobile+1){
 		justify-self: end;
 	}
