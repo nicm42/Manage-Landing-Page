@@ -39,7 +39,6 @@ $h2-line-desktop: $h2-size-desktop + 0.2;
 
 $text-width: 66%;
 
-
 /**********************General**********************/
 html{
 	margin: 0;
@@ -49,6 +48,13 @@ html{
 body{
 	font-family: 'Be Vietnam', sans-serif;
 	font-size: $body-font-size;
+	background-image: url(images/bg-tablet-pattern.svg), url(images/bg-tablet-pattern.svg);
+	background-repeat: no-repeat;
+	background-position: 55vw -20vh, -35vw 120vh;
+	@media screen and (max-width: $mobile){
+		background-position: 20vw -5vh, 65vw 67vh;
+		background-size: contain, contain;
+	}
 }
 button{
 	color: $very-light-grey;
@@ -344,7 +350,7 @@ nav{
 	padding: 4.5rem $page-edge-mobile 5rem $page-edge-mobile;
 	@media screen and (min-width: $mobile+1){
 		background-image: url(images/bg-simplify-section-desktop.svg);
-		background-position: 12rem bottom;
+		background-position: 16vw bottom;
 		grid-template-areas: "simplify-message simplify-button";
 		grid-template-columns: $grid-column-size;
 		grid-column-gap: $column-gap;
