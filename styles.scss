@@ -64,6 +64,26 @@ button{
 	background-color: $bright-red;
 	border: none;
     box-shadow: $button-shadow $bright-red;
+    cursor: pointer;
+    &:hover, &:active{
+    	background-color: lighten($bright-red, 20%);
+    	box-shadow: $button-shadow lighten($bright-red, 20%);
+    }
+}
+
+header a{
+	color: $dark-blue;
+	text-decoration: none;
+	&:hover, &:active{
+		color: $dark-greyish-blue;
+	}
+}
+footer a{
+	color: $very-light-grey;
+	text-decoration: none;
+	&:hover, &:active{
+		color: $bright-red;
+	}
 }
 
 /**********************Header**********************/
@@ -84,7 +104,6 @@ header{
 nav{
 	grid-area: nav;
 	justify-self: end;
-	color: dark-blue;
 	font-size: $very-small-text;
 	@media screen and (min-width: $mobile+1){
 		justify-self: stretch;
@@ -377,6 +396,13 @@ nav{
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 	        box-shadow: none;
+    &:hover, &:active{
+    	color: lighten($bright-red, 20%);
+		background-color: $very-light-grey;
+		-webkit-box-shadow: none;
+		   -moz-box-shadow: none;
+	    	    box-shadow: none;
+    }
 	@media screen and (min-width: $mobile+1){
 		justify-self: end;
 	}
@@ -420,12 +446,15 @@ footer{
 	@media screen and (min-width: $mobile+1){
 		justify-self: start;
 	}		
-	img{
+	a{
 		padding: 0.3rem;
 		&:first-of-type{
 			@media screen and (min-width: $mobile+1){
 				padding-left: 0;
 			}
+		}
+		&:hover, &:active{
+			filter: brightness(0) saturate(100%) invert(55%) sepia(79%) saturate(4231%) hue-rotate(340deg) brightness(101%) contrast(90%);
 		}
 		@media screen and (max-width: $mobile){
 			width: 10%;
@@ -482,6 +511,11 @@ footer{
 	@extend button;	
 	box-shadow: none;
 	margin-left: 0.3rem;
+	&:hover, &:active{
+	 -webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+	  	    box-shadow: none;
+	  }
 	@media screen and (max-width: $mobile){
 		text-transform: uppercase;
 	}
