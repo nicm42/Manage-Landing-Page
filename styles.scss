@@ -16,6 +16,7 @@ $bold-font: 700;
 
 $small-text: 0.7rem;
 $very-small-text: 0.6rem;
+$even-smaller-text: 0.5rem;
 
 $button-radius: 1.5rem;
 $button-paddding: 0.7rem 1.6rem 0.7rem 1.6rem;
@@ -38,6 +39,8 @@ $h2-size-desktop: $h2-size-mobile + 0.5;
 $h2-line-desktop: $h2-size-desktop + 0.2;
 
 $text-width: 66%;
+
+$input-padding: .5rem;
 
 /**********************General**********************/
 html {
@@ -97,7 +100,7 @@ header {
 	padding: 2rem $page-edge-mobile 2rem $page-edge-mobile;
 	@media screen and (min-width: $mobile+1) {
 		grid-template-areas: "header-logo nav header-button";
-		grid-template-columns: auto 0.6fr auto;
+		grid-template-columns: auto .6fr auto;
 		padding: 2.5rem $page-edge-desktop 5rem $page-edge-desktop;
 	}
 }
@@ -150,8 +153,8 @@ nav {
 	@media screen and (min-width: $mobile+1) {
 		grid-template-areas: "build-message build-graphs";
 		grid-template-columns: $grid-column-size;
-		padding-top: $page-edge-desktop;
-		padding-bottom: $page-edge-desktop;
+		padding-left: $page-edge-desktop;
+		padding-right: $page-edge-desktop;
 		text-align: left;
 	}
 }
@@ -494,28 +497,33 @@ footer {
 }
 .footer__updates {
 	grid-area: footer-updates;
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: center;
-	@media screen and (max-width: $mobile) {
-		width: 100%;
-	}
+	display: grid;
+	grid-template-areas: "footer-input footer-submit"
+						 "footer-invalid .";
+	justify-items: center;
+	color: $dark-greyish-blue;
 	@media screen and (min-width: $mobile+1) {
 		justify-self: end;
 	}
 
 }
 .footer__input {
-	padding: .5rem;
+	grid-area: footer-input;
+	padding: $input-padding;
 	border-radius: $button-radius;
 	border-style: solid;
-	@media screen and (max-width: $mobile) {
-		width: 55%;
+}
+input.error {
+	color: $bright-red;
+	&:valid {
+		border-style: auto;
+		border-color: inherit;
 	}
 }
 .footer__submit {
 	@extend button;	
-	margin-left: 0.3rem;
+	grid-area: footer-submit;
+	margin-left: .3rem;
 	box-shadow: none;
 	&:hover, 
 	&:active {
@@ -526,6 +534,15 @@ footer {
 	@media screen and (max-width: $mobile) {
 		text-transform: uppercase;
 	}
+}
+.footer__invalid {
+	grid-area: footer-invalid;
+	justify-self: start;
+	padding-left: $input-padding;
+	font-size: $even-smaller-text;
+	color: $bright-red;
+	font-style: italic;
+	visibility: hidden;
 }
 .footer__copyright {
 	grid-area: footer-copyright;

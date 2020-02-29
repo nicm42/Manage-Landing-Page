@@ -149,10 +149,11 @@
     </ul>
   </div>
 
-    <div class="footer__updates">
-      <input class="footer__input" name="footer__input" type="text" placeholder="Updates in your inbox…">
-      <input class="footer__submit" name="footer__submit" type="button" value="Go">
-    </div>
+    <form class="footer__updates">
+      <input class="footer__input" name="footer__input" type="email" placeholder="Updates in your inbox…" required>
+      <input class="footer__submit" name="footer__submit" type="submit" value="Go">
+      <div class="footer__invalid">Please insert a valid email</div>
+    </form>
 
     <div class="footer__copyright">Copyright 2020. All Rights Reserved</div>
   </footer>
