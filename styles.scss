@@ -1,13 +1,13 @@
 /**********************Variables**********************/
 $mobile: 640px;
 
-$bright-red: hsl(12, 88%, 59%);
-$dark-blue: hsl(228, 39%, 23%);
+$bright-red: hsl(12,88%,59%);
+$dark-blue: hsl(228,39%,23%);
 
-$dark-greyish-blue: hsl(227, 12%, 61%);
-$very-dark-blue: hsl(233, 12%, 13%);
-$very-pale-red: hsl(13, 100%, 96%);
-$very-light-grey: hsl(0, 0%, 98%);
+$dark-greyish-blue: hsl(227,12%,61%);
+$very-dark-blue: hsl(233, 12%,13%);
+$very-pale-red: hsl(13,100%,96%);
+$very-light-grey: hsl(0,0%,98%);
 
 $body-font-size: 16px;
 $regular-font: 400;
@@ -19,9 +19,9 @@ $very-small-text: 0.6rem;
 
 $button-radius: 1.5rem;
 $button-paddding: 0.7rem 1.6rem 0.7rem 1.6rem;
-$button-shadow: 0 0.5rem 0.5rem -0.25rem;
+$button-shadow: 0 .5rem .5rem -.25rem;
 
-$grid-column-size: 0.6fr 0.6fr;
+$grid-column-size: .6fr .6fr;
 $column-gap: 4rem;
 $row-gap: 0.8rem;
 
@@ -40,23 +40,23 @@ $h2-line-desktop: $h2-size-desktop + 0.2;
 $text-width: 66%;
 
 /**********************General**********************/
-html{
+html {
 	margin: 0;
 	padding: 0;
 }
 
-body{
+body {
 	font-family: 'Be Vietnam', sans-serif;
 	font-size: $body-font-size;
 	background-image: url(images/bg-tablet-pattern.svg), url(images/bg-tablet-pattern.svg);
 	background-repeat: no-repeat;
 	background-position: 55vw -20vh, -35vw 120vh;
-	@media screen and (max-width: $mobile){
+	@media screen and (max-width: $mobile) {
 		background-position: 20vw -5vh, 65vw 67vh;
 		background-size: contain, contain;
 	}
 }
-button{
+button {
 	color: $very-light-grey;
 	font-weight: $bold-font;
 	border-radius: $button-radius;
@@ -65,353 +65,356 @@ button{
 	border: none;
     box-shadow: $button-shadow $bright-red;
     cursor: pointer;
-    &:hover, &:active{
+    &:hover, 
+    &:active {
     	background-color: lighten($bright-red, 20%);
     	box-shadow: $button-shadow lighten($bright-red, 20%);
     }
 }
 
-header a{
+header a {
 	color: $dark-blue;
 	text-decoration: none;
-	&:hover, &:active{
+	&:hover, 
+	&:active {
 		color: $dark-greyish-blue;
 	}
 }
-footer a{
+footer a {
 	color: $very-light-grey;
 	text-decoration: none;
-	&:hover, &:active{
+	&:hover, 
+	&:active {
 		color: $bright-red;
 	}
 }
 
 /**********************Header**********************/
-header{
+header {
 	display: grid;
 	grid-template-areas: "header-logo nav";
 	align-items: center;
 	padding: 2rem $page-edge-mobile 2rem $page-edge-mobile;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		grid-template-areas: "header-logo nav header-button";
 		grid-template-columns: auto 0.6fr auto;
 		padding: 2.5rem $page-edge-desktop 5rem $page-edge-desktop;
 	}
 }
-.header__logo{
+.header__logo {
 	grid-area: header-logo;
 }
-nav{
+nav {
 	grid-area: nav;
 	justify-self: end;
 	font-size: $very-small-text;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		justify-self: stretch;
 	}
 }
-.header__hamburger{
-	@media screen and (min-width: $mobile+1){
+.header__hamburger {
+	@media screen and (min-width: $mobile+1) {
 		display: none;
 	}	
 }
-.nav__links{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+.nav__links {
 	display: flex;
 	justify-content: space-around;
-	@media screen and (max-width: $mobile){
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	@media screen and (max-width: $mobile) {
+		position: absolute;
+		display: none;
 		width: 100%;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		position: absolute;
-		display: none;
 	}
 }
-.header__button{
+.header__button {
 	grid-area: header-button;
 	justify-self: end;
-	@media screen and (max-width: $mobile){
+	@media screen and (max-width: $mobile) {
 		display: none;
 	}
 }
 /**********************Build**********************/
-.build{
+.build {
 	display: grid;
 	grid-template-areas: 
 						"build-graphs"
 						"build-message";
-	text-align: center;
 	padding: 0 $page-edge-mobile 0 $page-edge-mobile;
-	@media screen and (min-width: $mobile+1){
+	text-align: center;
+	@media screen and (min-width: $mobile+1) {
 		grid-template-areas: "build-message build-graphs";
 		grid-template-columns: $grid-column-size;
+		padding-top: $page-edge-desktop;
+		padding-bottom: $page-edge-desktop;
 		text-align: left;
-		padding: 0 $page-edge-desktop 0 $page-edge-desktop;
 	}
 }
-.build__message{
+.build__message {
 	grid-area: build-message;
 }	
-.build__header{
+.build__header {
+	margin: 0 0 .5rem 0;
 	color: $very-dark-blue;
 	font-weight: $bold-font;
 	font-size: $h1-size-mobile;
 	line-height: $h1-line-mobile;
-	margin: 0 0 0.5rem 0;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		font-size: $h1-size-desktop;
 		line-height: $h1-line-desktop;
 	}
 }
-.build__text{
+.build__text {
 	color: $dark-greyish-blue;
 	padding-bottom: 1.7rem;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		width: $text-width;
 	}
 }
-.build__graphs{
+.build__graphs {
 	grid-area: build-graphs;
 	max-width: 100%;
 }
 
 /**********************Different**********************/
-.different{
-	text-align: center;
-	padding-top: 2.5rem;
+.different {
 	display: grid;
 	grid-template-areas: "different-message"
 						 "different-bullets";
-	@media screen and (min-width: $mobile+1){
+	padding-top: 2.5rem;
+	text-align: center;
+	@media screen and (min-width: $mobile+1) {
 		grid-template-areas: "different-message different-bullets";
 		grid-template-columns: $grid-column-size;
 		grid-column-gap: $column-gap;
 		padding: 4.5rem $page-edge-desktop 0 $page-edge-desktop;
 	}
 }
-.different__message{
+.different__message {
 	grid-area: different-message;
-	//padding: 0.7rem 1rem 1rem 1rem;
 	padding: 0 $page-edge-mobile 0 $page-edge-mobile;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		text-align: left;
 		padding: 2rem 0 1.5rem 0;
 	}
 }
-.different__header{
+.different__header {
 	color: $very-dark-blue;
 	font-weight: $bold-font;
 	font-size: $h2-size-mobile;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		font-size: $h2-size-desktop;
 		line-height: $h2-line-desktop;
 		text-align: left;
 	}
 }
-.different__text{
+.different__text {
 	color: $dark-greyish-blue;
 	font-size: $small-text;
 	line-height: 1.5rem;
-	@media screen and (min-width: $mobile+1){
-		font-size: $body-font-size;
+	@media screen and (min-width: $mobile+1) {
 		width: $text-width;
 		padding-right: 5rem;
+		font-size: $body-font-size;
 		line-height: 1.3rem;
 	}
 }
-.different__bullets{
+.different__bullets {
 	grid-area: different-bullets;
 	font-size: $small-text;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		text-align: left;
 		font-size: $body-font-size;
 	}
 }
-.different__bullet{
-	padding-top: 2rem;
-	text-align: left;
+.different__bullet {
 	display: grid;
 	grid-template-areas: "different-number different-numheader"
 						 "different-bullet-text different-bullet-text";
 	grid-template-columns: auto 1fr;
 	align-items: center;
-	@media screen and (min-width: $mobile+1){
+	padding-top: 2rem;
+	text-align: left;
+	@media screen and (min-width: $mobile+1) {
 		grid-template-areas: "different-number different-numheader"
 							 ". different-bullet-text";
 	}
 }
-.different__number{
+.different__number {
+	grid-area: different-number;
+	padding: .5rem 1.2rem .5rem 1.2rem;
 	color: $very-light-grey;
 	font-weight: $bold-font;
 	background-color: $bright-red;
-	padding: 0.5rem 1.2rem 0.5rem 1.2rem;
 	border-radius: $button-radius;
-	grid-area: different-number;
 	z-index: 1;
 }
-.different__numheader{
-	color: $very-dark-blue;
-	font-size: 0.8rem;
-	font-weight: $bold-font;
-	padding: 0.5rem 0 0.5rem 2rem;
+.different__numheader {
 	grid-area: different-numheader;
+	padding: .5rem 0 .5rem 2rem;
 	margin-left: -1rem;
-	@media screen and (max-width: $mobile){
+	color: $very-dark-blue;
+	font-size: .8rem;
+	font-weight: $bold-font;
+	@media screen and (max-width: $mobile) {
 		background-color: $very-pale-red;
 	}
 }
-.different__bullettext{
+.different__bullettext {
+	grid-area: different-bullet-text;
+	padding: .5rem .5rem 0 .5rem;
 	color: $dark-greyish-blue;
 	line-height: 1.3rem;
 	text-align: left;
-	padding: 0.5rem 0.5rem 0 0.5rem;
-	grid-area: different-bullet-text;
-	@media screen and (min-width: $mobile+1){
-		padding: 0.5rem 0 0 1rem;
+	@media screen and (min-width: $mobile+1) {
+		padding-right: 0;
+		padding-left: 1rem;
 	}
 }
 	
 /**********************Testimonials**********************/
-.testimonials{
-	text-align: center;
+.testimonials {
 	padding: 2rem 0 2rem 0;
-	@media screen and (min-width: $mobile+1){
+	text-align: center;
+	@media screen and (min-width: $mobile+1) {
 		padding-bottom: 9rem;
 	}
 }
-.testimonials__slider{
+.testimonials__slider {
 	padding-top: 4rem;
 	margin-bottom: 1rem;
 	display: flex;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
-	&::-webkit-scrollbar{
+	&::-webkit-scrollbar {
 		height: 0;
 		width: 0;
 		background: transparent;
 	}
 	overflow-x: hidden;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		overflow-x: auto;
 	}
 }
-.testimonials__header{
+.testimonials__header {
 	color: $very-dark-blue;
 	font-size: $h2-size-mobile;
 	font-weight: $bold-font;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		font-size: $h2-size-desktop;
 	}
 }
-.testimonials__person{
-	background-color: $very-light-grey;
-	margin-right: 1rem;
-	min-width: 100%;
+.testimonials__person {
 	position: relative;
+	margin-right: 1rem;
 	padding-top: 3rem;
-	@media screen and (min-width: $mobile+1){
-		min-width: 27rem;
+	min-width: 100%;
+	background-color: $very-light-grey;
+	@media screen and (min-width: $mobile+1) {
 		margin-right: 2rem;
+		min-width: 27rem;
 	}
 }
-.testimonials__photo{
-	width: 3.5rem;
-	height: auto;
+.testimonials__photo {
 	position: absolute;
 	top: -1.6rem;
 	left: 50%;
+	width: 3.5rem;
+	height: auto;
 	margin-left: -1.6rem;
 }
-.testimonials__name{
+.testimonials__name {
 	color: $very-dark-blue;
 	font-weight: $bold-font;
 }
-.testimonials__text{
+.testimonials__text {
+	padding: .5rem 2rem 2rem 2rem;
 	color: $dark-greyish-blue;
-	padding: 0.5rem 2rem 2rem 2rem;
 	line-height: 1.3rem;
 }
-.testimonials__dots{
+.testimonials__dots {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 2rem;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		display: none;
 	}
 }
-.testimonials__dot{
+.testimonials__dot {
+	height: .3rem;
+	width: .3rem;
+	margin: 0.1rem;
 	background-color: white;
 	border: 1px solid $bright-red;
-	height: 0.3rem;
-	width: 0.3rem;
 	border-radius: 50%;
-	margin: 0.1rem;
 	cursor: pointer;
 }
-.filled-dot{
+.filled-dot {
 	background-color: $bright-red;
 }
 
 /**********************Simplify**********************/
-.simplify{
+.simplify {
+	display: grid;
+	grid-template-areas: "simplify-message"
+						  "simplify-button";
+	padding: 4.5rem $page-edge-mobile 5rem $page-edge-mobile;
+	justify-items: center;
+	color: $very-light-grey;
+	text-align: center;
 	background: $bright-red;
 	background-image: url(images/bg-simplify-section-mobile.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
-	color: $very-light-grey;
-	display: grid;
-	grid-template-areas: "simplify-message"
-						  "simplify-button";
-	justify-items: center;
-	text-align: center;
-	padding: 4.5rem $page-edge-mobile 5rem $page-edge-mobile;
-	@media screen and (min-width: $mobile+1){
-		background-image: url(images/bg-simplify-section-desktop.svg);
-		background-position: 16vw bottom;
+	@media screen and (min-width: $mobile+1) {
 		grid-template-areas: "simplify-message simplify-button";
 		grid-template-columns: $grid-column-size;
 		grid-column-gap: $column-gap;
 		align-items: center;
 		padding: 3.5rem $page-edge-desktop 3.5rem $page-edge-desktop;
+		background-image: url(images/bg-simplify-section-desktop.svg);
+		background-position: 16vw bottom;
 	}
 }
-.simplify__message{
+.simplify__message {
 	grid-area: simplify-message;
 	padding-bottom: 1.3rem;
 	font-size: 1.9rem;
 	font-weight: $bold-font;
 	line-height: 2.5rem;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		line-height: 2rem;
-		padding-bottom: 0rem;
+		padding-bottom: 0;
 		text-align: left;
 	}
 }
-.simplify__button{
+.simplify__button {
 	grid-area: simplify-button;
 	color: $bright-red;
 	background-color: $very-light-grey;
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 	        box-shadow: none;
-    &:hover, &:active{
+    &:hover, 
+    &:active {
     	color: lighten($bright-red, 20%);
 		background-color: $very-light-grey;
 		-webkit-box-shadow: none;
 		   -moz-box-shadow: none;
 	    	    box-shadow: none;
     }
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		justify-self: end;
 	}
 }
 
 /**********************Footer**********************/
-footer{
-	background-color: $very-dark-blue;
-	color: $very-light-grey;
+footer {
 	display: grid;
 	grid-template-areas: "footer-updates"
 						 "footer-links"
@@ -421,110 +424,114 @@ footer{
 	grid-row-gap: 2.5rem;
 	justify-items: center;
 	padding: 2.5rem 0 2rem 0;
-	@media screen and (min-width: $mobile+1){
+	background-color: $very-dark-blue;
+	color: $very-light-grey;
+	@media screen and (min-width: $mobile+1) {
 		grid-template-areas: "footer-logo footer-links footer-updates"
 							 "footer-social footer-links footer-copyright";
 		align-items: start;
 		padding: 3.2rem $page-edge-desktop 2rem $page-edge-desktop;
 	}
 }
-.footer__logo{
+.footer__logo {
 	grid-area: footer-logo;
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		justify-self: start;
 	}
 
 }
-.footer__social{
+.footer__social {
 	grid-area: footer-social;
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
-	@media screen and (max-width: $mobile){
+	@media screen and (max-width: $mobile) {
 		width: 100%;
 	}
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		justify-self: start;
 	}		
-	a{
+	a {
 		padding: 0.3rem;
-		&:first-of-type{
-			@media screen and (min-width: $mobile+1){
+		&:first-of-type {
+			@media screen and (min-width: $mobile+1) {
 				padding-left: 0;
 			}
 		}
-		&:hover, &:active{
+		&:hover, //change to orange on hover
+		&:active {
 			filter: brightness(0) saturate(100%) invert(55%) sepia(79%) saturate(4231%) hue-rotate(340deg) brightness(101%) contrast(90%);
 		}
-		@media screen and (max-width: $mobile){
+		@media screen and (max-width: $mobile) {
 			width: 10%;
 			padding: 0.7rem;
 		}
 	}
 }
-.footer__links{
+.footer__links {
 	justify-self: stretch;
 	display: flex;
 	flex-wrap: nowrap;
-	font-size: $small-text;
 	justify-content: space-around;
-	@media screen and (min-width: $mobile+1){
+	font-size: $small-text;
+	@media screen and (min-width: $mobile+1) {
 		grid-row: 1 / span 2;
 		justify-content: space-between;
 	}
-	ul{
+	ul {
 		list-style-type: none;
 	}
-	li{
-		margin-bottom: 0.5rem;
-		@media screen and (min-width: $mobile+1){
+	li {
+		margin-bottom: .5rem;
+		@media screen and (min-width: $mobile+1) {
 			margin-bottom: 0.7rem;
 		}
 	}
 }
-.footer__links ul{
+.footer__links ul {
 	margin: 0;
 	padding: 0;
 }
-.footer__updates{
+.footer__updates {
 	grid-area: footer-updates;
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
-	@media screen and (max-width: $mobile){
+	@media screen and (max-width: $mobile) {
 		width: 100%;
 	}
-	@media screen and (min-width: $mobile+1){
+	@media screen and (min-width: $mobile+1) {
 		justify-self: end;
 	}
 
 }
-.footer__input{
+.footer__input {
+	padding: .5rem;
 	border-radius: $button-radius;
 	border-style: solid;
-	padding: 0.5rem;
-	@media screen and (max-width: $mobile){
+	@media screen and (max-width: $mobile) {
 		width: 55%;
 	}
 }
-.footer__submit{
+.footer__submit {
 	@extend button;	
-	box-shadow: none;
 	margin-left: 0.3rem;
-	&:hover, &:active{
+	box-shadow: none;
+	&:hover, 
+	&:active {
 	 -webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 	  	    box-shadow: none;
 	  }
-	@media screen and (max-width: $mobile){
+	@media screen and (max-width: $mobile) {
 		text-transform: uppercase;
 	}
 }
-.footer__copyright{
+.footer__copyright {
 	grid-area: footer-copyright;
-	color: $dark-greyish-blue;
 	font-size: $very-small-text;
-	@media screen and (min-width: $mobile+1){
+	color: $dark-greyish-blue;
+	@media screen and (min-width: $mobile+1) {
 		justify-self: end;
 	}
 }
