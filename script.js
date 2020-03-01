@@ -1,7 +1,6 @@
 /*
 TODO:
-	- nav
-	- testimonials slider
+	- testimonials slider (https://swiperjs.com/)
 */
 
 
@@ -22,6 +21,48 @@ hamburger.addEventListener(
 		}
 	},false
 );
+
+
+/*
+	Testimonials slider
+*/
+
+const slider = document.querySelector('.testimonials__slider');
+const people = document.getElementsByClassName('testimonials__person');
+const dots = document.getElementsByClassName('testimonials__dot');
+
+//If we're on mobile and the slider has been scrolled
+//either by clicking a dot or scrollin,
+//then need to update the dots to filled or not based on which one is visible
+slider.addEventListener(
+	'scroll',
+	event => {
+		for(person of people){
+			let personId = person.id.substring(person.id.length - 1);
+			if(isInViewport(person)){
+				dots[Number(personId)-1].classList.add('filled-dot');
+			}else{
+				dots[Number(personId)-1].classList.remove('filled-dot');
+			}
+		}
+	},false
+);
+
+
+/*!
+ * Determine if an element is in the viewport
+ * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
+ * @param  {Node}    elem The element
+ * @return {Boolean}      Returns true if element is in the viewport
+ */
+var isInViewport = function (elem) {
+	var distance = elem.getBoundingClientRect();
+	return (
+		distance.left >= 0 &&
+		distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+	);
+};
+
 
 /*
 	Validate email input 

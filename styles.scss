@@ -339,10 +339,11 @@ nav {
 		width: 0;
 		background: transparent;
 	}
-	overflow-x: hidden;
-	@media screen and (min-width: $mobile+1) {
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	/*@media screen and (min-width: $mobile+1) {
 		overflow-x: auto;
-	}
+	}*/
 }
 .testimonials__header {
 	color: $very-dark-blue;
