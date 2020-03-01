@@ -31,37 +31,27 @@ const slider = document.querySelector('.testimonials__slider');
 const people = document.getElementsByClassName('testimonials__person');
 const dots = document.getElementsByClassName('testimonials__dot');
 
-//If we're on mobile and the slider has been scrolled
-//either by clicking a dot or scrollin,
-//then need to update the dots to filled or not based on which one is visible
-slider.addEventListener(
-	'scroll',
-	event => {
-		for(person of people){
-			let personId = person.id.substring(person.id.length - 1);
-			if(isInViewport(person)){
-				dots[Number(personId)-1].classList.add('filled-dot');
-			}else{
-				dots[Number(personId)-1].classList.remove('filled-dot');
-			}
+//Use intersection observer to check if a person is mostly in view
+//If they are, then make that dot filled
+//If not, make that dot empty
+//Only applicable to mobile, as dots not visible on desktop
+function onChange(changes, observer) {
+	changes.forEach((change) => {
+		let personId = change.target.id.substring(change.target.id.length - 1);
+		if (change.intersectionRatio > 0.5) {
+			dots[Number(personId)-1].classList.add('filled-dot');
+		}else{
+			dots[Number(personId)-1].classList.remove('filled-dot');
 		}
-	},false
-);
-
-
-/*!
- * Determine if an element is in the viewport
- * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
- * @param  {Node}    elem The element
- * @return {Boolean}      Returns true if element is in the viewport
- */
-var isInViewport = function (elem) {
-	var distance = elem.getBoundingClientRect();
-	return (
-		distance.left >= 0 &&
-		distance.right <= (window.innerWidth || document.documentElement.clientWidth)
-	);
+	});
+}
+let options = {
+	threshold: 0.5  //update when half of the person is visible
 };
+let observer = new IntersectionObserver(onChange, options);
+for (let person of people) {
+	observer.observe(person);
+}
 
 
 /*
