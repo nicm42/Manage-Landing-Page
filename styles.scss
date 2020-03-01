@@ -334,6 +334,7 @@ nav {
 	display: flex;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
+	cursor: grab;
 	&::-webkit-scrollbar {
 		height: 0;
 		width: 0;
@@ -341,9 +342,6 @@ nav {
 	}
 	overflow-x: auto;
 	scroll-behavior: smooth;
-	/*@media screen and (min-width: $mobile+1) {
-		overflow-x: auto;
-	}*/
 }
 .testimonials__header {
 	color: $very-dark-blue;

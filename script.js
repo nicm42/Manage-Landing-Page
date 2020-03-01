@@ -53,6 +53,33 @@ for (let person of people) {
 	observer.observe(person);
 }
 
+//Scroll testimonials section when it's grabbed and slid (ie mousedown then move)
+//https://courses.wesbos.com/account/access/5ca4d00285f96c03c1e3d972/view/194158963
+let mouseDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (event) => {
+	mouseDown = true;
+	slider.style.cursor = "grabbing";
+	startX = event.pageX - slider.offsetLeft;
+	scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', () => {
+	mouseDown = false;
+	slider.style.cursor = "grab";
+});
+slider.addEventListener('mouseup', () => {
+	mouseDown = false;
+	slider.style.cursor = "grab";
+});
+slider.addEventListener('mousemove', (event) => {
+	if(!mouseDown){return;}
+	event.preventDefault();
+	let newX = event.pageX - slider.offsetLeft;
+	let slide = (newX - startX) * 2;
+	slider.scrollLeft = scrollLeft - slide;
+});
 
 /*
 	Validate email input 
