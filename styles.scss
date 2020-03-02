@@ -1,3 +1,10 @@
+/*
+TODO:
+	Mobile Chrome and Safari Go button has gone mad
+*/
+
+
+
 /**********************Variables**********************/
 $mobile: 640px;
 
@@ -568,7 +575,20 @@ input.error {
 	}
 }
 .footer__submit {
-	@extend button;	
+	//@extend button;	
+	color: $very-light-grey;
+	font-weight: $bold-font;
+	border-radius: $button-radius;
+	padding: $button-paddding;
+	background-color: $bright-red;
+	border: none;
+    box-shadow: $button-shadow $bright-red;
+    cursor: pointer;
+    &:hover, 
+    &:active {
+    	background-color: lighten($bright-red, 20%);
+    	box-shadow: $button-shadow lighten($bright-red, 20%);
+    }
 	grid-area: footer-submit;
 	margin-left: .3rem;
 	box-shadow: none;
