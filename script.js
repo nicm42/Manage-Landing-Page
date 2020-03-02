@@ -1,9 +1,3 @@
-/*
-TODO:
-	- testimonials slider (https://swiperjs.com/)
-*/
-
-
 /* 
 	Mobile nav 
 	From: https://www.youtube.com/watch?v=DZg6UfS5zYg
@@ -61,17 +55,17 @@ let scrollLeft;
 
 slider.addEventListener('mousedown', (event) => {
 	mouseDown = true;
-	slider.style.cursor = "grabbing";
+	slider.classList.add('active');
 	startX = event.pageX - slider.offsetLeft;
 	scrollLeft = slider.scrollLeft;
 });
 slider.addEventListener('mouseleave', () => {
 	mouseDown = false;
-	slider.style.cursor = "grab";
+	slider.classList.remove('active');
 });
 slider.addEventListener('mouseup', () => {
 	mouseDown = false;
-	slider.style.cursor = "grab";
+	slider.classList.remove('active');
 });
 slider.addEventListener('mousemove', (event) => {
 	if(!mouseDown){return;}

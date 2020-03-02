@@ -342,6 +342,14 @@ nav {
 	}
 	overflow-x: auto;
 	scroll-behavior: smooth;
+	   -moz-user-select: none;
+	-webkit-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+}
+.active{
+	scroll-behavior: auto;
+	cursor: grabbing;
 }
 .testimonials__header {
 	color: $very-dark-blue;
