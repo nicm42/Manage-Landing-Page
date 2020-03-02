@@ -575,20 +575,10 @@ input.error {
 	}
 }
 .footer__submit {
-	//@extend button;	
-	color: $very-light-grey;
-	font-weight: $bold-font;
-	border-radius: $button-radius;
-	padding: $button-paddding;
-	background-color: $bright-red;
-	border: none;
-    box-shadow: $button-shadow $bright-red;
-    cursor: pointer;
-    &:hover, 
-    &:active {
-    	background-color: lighten($bright-red, 20%);
-    	box-shadow: $button-shadow lighten($bright-red, 20%);
-    }
+	@extend button;	
+	-webkit-appearance: none; //To stop iOS from styling this how it likes
+	   -moz-appearance: none;
+	        appearance: none;
 	grid-area: footer-submit;
 	margin-left: .3rem;
 	box-shadow: none;
