@@ -13,7 +13,7 @@ const babel = require('gulp-babel');
 
 // File paths
 const files = { 
-    scssPath: 'arc/*.scss',
+    scssPath: 'src/*.scss',
     jsPath: 'src/*.js'
 }
 
@@ -22,7 +22,7 @@ function scssTask(){
     return src(files.scssPath)
         .pipe(sourcemaps.init()) // initialize sourcemaps first
         .pipe(sass()) // compile SCSS to CSS
-        .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
+        .pipe(postcss([ autoprefixer({ grid: 'autoplace' }), cssnano() ])) // PostCSS plugins
         .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
         .pipe(dest('./')
     ); // put final CSS in dist folder
@@ -35,7 +35,7 @@ function jsTask(){
         //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
         ])
         .pipe(babel())
-        .pipe(dest('./')
+        .pipe(dest('dist')
     );
 }
 
@@ -44,7 +44,7 @@ function cacheBustTask(){
     var cbString = new Date().getTime();
     return src(['index.html'])
         .pipe(replace(/cb=\d+/g, 'cb=' + cbString))
-        .pipe(dest('.'));
+        .pipe(dest('./'));
 }
 
 // Watch task: watch SCSS and JS files for changes
@@ -65,3 +65,5 @@ exports.default = series(
     parallel(scssTask, jsTask), 
     watchTask
 );
+
+exports.scssTask = scssTask;

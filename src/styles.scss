@@ -106,10 +106,12 @@ header {
 }
 .header__logo {
 	grid-area: header-logo;
+	align-self: center;
 }
 nav {
 	grid-area: nav;
 	justify-self: end;
+	align-self: center;
 	font-size: $very-small-text;
 	@media screen and (min-width: $mobile+1) {
 		justify-self: stretch;
@@ -178,6 +180,7 @@ nav {
 .header__button {
 	grid-area: header-button;
 	justify-self: end;
+	align-self: center;
 	@media screen and (max-width: $mobile) {
 		display: none;
 	}
@@ -290,6 +293,7 @@ nav {
 }
 .different__number {
 	grid-area: different-number;
+	align-self: center;
 	padding: .5rem 1.2rem .5rem 1.2rem;
 	color: $very-light-grey;
 	font-weight: $bold-font;
@@ -299,6 +303,7 @@ nav {
 }
 .different__numheader {
 	grid-area: different-numheader;
+	align-self: center;
 	padding: .5rem 0 .5rem 2rem;
 	margin-left: -1rem;
 	color: $very-dark-blue;
@@ -310,6 +315,7 @@ nav {
 }
 .different__bullettext {
 	grid-area: different-bullet-text;
+	align-self: center;
 	padding: .5rem .5rem 0 .5rem;
 	color: $dark-greyish-blue;
 	line-height: 1.3rem;
@@ -433,11 +439,13 @@ nav {
 }
 .simplify__message {
 	grid-area: simplify-message;
+	justify-self: center;
 	padding-bottom: 1.3rem;
 	font-size: 1.9rem;
 	font-weight: $bold-font;
 	line-height: 2.5rem;
 	@media screen and (min-width: $mobile+1) {
+		align-self: center;
 		line-height: 2rem;
 		padding-bottom: 0;
 		text-align: left;
@@ -445,6 +453,8 @@ nav {
 }
 .simplify__button {
 	grid-area: simplify-button;
+	align-self: center;
+	justify-self: center;
 	color: $bright-red;
 	background-color: $very-light-grey;
 	-webkit-box-shadow: none;
@@ -485,13 +495,16 @@ footer {
 }
 .footer__logo {
 	grid-area: footer-logo;
+	justify-self: center;
 	@media screen and (min-width: $mobile+1) {
+		align-self: start;
 		justify-self: start;
 	}
 
 }
 .footer__social {
 	grid-area: footer-social;
+	justify-self: center;
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
@@ -499,6 +512,7 @@ footer {
 		width: 100%;
 	}
 	@media screen and (min-width: $mobile+1) {
+		align-self: start;
 		justify-self: start;
 	}		
 	a {
@@ -519,6 +533,7 @@ footer {
 	}
 }
 .footer__links {
+	grid-area: footer-links;
 	justify-self: stretch;
 	display: flex;
 	flex-wrap: nowrap;
@@ -526,6 +541,7 @@ footer {
 	font-size: $small-text;
 	@media screen and (min-width: $mobile+1) {
 		grid-row: 1 / span 2;
+		align-self: start;
 		justify-content: space-between;
 	}
 	ul {
@@ -544,12 +560,14 @@ footer {
 }
 .footer__updates {
 	grid-area: footer-updates;
+	justify-self: center;
 	display: grid;
 	grid-template-areas: "footer-input footer-submit"
 						 "footer-invalid .";
 	justify-items: center;
 	color: $dark-greyish-blue;
 	@media screen and (min-width: $mobile+1) {
+		align-self: start;
 		justify-self: end;
 	}
 
@@ -596,9 +614,11 @@ input.error {
 }
 .footer__copyright {
 	grid-area: footer-copyright;
+	justify-self: center;
 	font-size: $very-small-text;
 	color: $dark-greyish-blue;
 	@media screen and (min-width: $mobile+1) {
+		align-self: start;
 		justify-self: end;
 	}
 }
