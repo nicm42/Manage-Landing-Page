@@ -29,22 +29,26 @@ const dots = document.getElementsByClassName('testimonials__dot');
 //If they are, then make that dot filled
 //If not, make that dot empty
 //Only applicable to mobile, as dots not visible on desktop
-function onChange(changes, observer) {
-	changes.forEach((change) => {
-		let personId = change.target.id.substring(change.target.id.length - 1);
-		if (change.intersectionRatio > 0.5) {
-			dots[Number(personId)-1].classList.add('filled-dot');
-		}else{
-			dots[Number(personId)-1].classList.remove('filled-dot');
-		}
-	});
-}
-let options = {
-	threshold: 0.5  //update when half of the person is visible
-};
-let observer = new IntersectionObserver(onChange, options);
-for (let person of people) {
-	observer.observe(person);
+let isMobile = window.matchMedia("only screen and (max-width: 640px)").matches;
+
+if (isMobile) {
+	function onChange(changes, observer) {
+		changes.forEach((change) => {
+			let personId = change.target.id.substring(change.target.id.length - 1);
+			if (change.intersectionRatio > 0.5) {
+				dots[Number(personId)-1].classList.add('filled-dot');
+			}else{
+				dots[Number(personId)-1].classList.remove('filled-dot');
+			}
+		});
+	}
+	let options = {
+		threshold: 0.5  //update when half of the person is visible
+	};
+	let observer = new IntersectionObserver(onChange, options);
+	for (let person of people) {
+		observer.observe(person);
+	}
 }
 
 //Scroll testimonials section when it's grabbed and slid (ie mousedown then move)

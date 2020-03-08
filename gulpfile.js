@@ -35,7 +35,7 @@ function jsTask(){
         //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
         ])
         .pipe(babel())
-        .pipe(dest('dist')
+        .pipe(dest('./')
     );
 }
 
@@ -67,3 +67,4 @@ exports.default = series(
 );
 
 exports.scssTask = scssTask;
+exports.jsTask = jsTask;

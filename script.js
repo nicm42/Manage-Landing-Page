@@ -26,48 +26,52 @@ var dots = document.getElementsByClassName('testimonials__dot'); //Use intersect
 //If not, make that dot empty
 //Only applicable to mobile, as dots not visible on desktop
 
-function onChange(changes, observer) {
-  changes.forEach(function (change) {
-    var personId = change.target.id.substring(change.target.id.length - 1);
+var isMobile = window.matchMedia("only screen and (max-width: 640px)").matches;
 
-    if (change.intersectionRatio > 0.5) {
-      dots[Number(personId) - 1].classList.add('filled-dot');
-    } else {
-      dots[Number(personId) - 1].classList.remove('filled-dot');
-    }
-  });
-}
+if (isMobile) {
+  var onChange = function onChange(changes, observer) {
+    changes.forEach(function (change) {
+      var personId = change.target.id.substring(change.target.id.length - 1);
 
-var options = {
-  threshold: 0.5 //update when half of the person is visible
+      if (change.intersectionRatio > 0.5) {
+        dots[Number(personId) - 1].classList.add('filled-dot');
+      } else {
+        dots[Number(personId) - 1].classList.remove('filled-dot');
+      }
+    });
+  };
 
-};
-var observer = new IntersectionObserver(onChange, options);
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
+  var options = {
+    threshold: 0.5 //update when half of the person is visible
 
-try {
-  for (var _iterator = people[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    var person = _step.value;
-    observer.observe(person);
-  } //Scroll testimonials section when it's grabbed and slid (ie mousedown then move)
-  //https://courses.wesbos.com/account/access/5ca4d00285f96c03c1e3d972/view/194158963
+  };
+  var observer = new IntersectionObserver(onChange, options);
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
 
-} catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
-} finally {
   try {
-    if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-      _iterator["return"]();
+    for (var _iterator = people[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var person = _step.value;
+      observer.observe(person);
     }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
   } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
+    try {
+      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+        _iterator["return"]();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
     }
   }
-}
+} //Scroll testimonials section when it's grabbed and slid (ie mousedown then move)
+//https://courses.wesbos.com/account/access/5ca4d00285f96c03c1e3d972/view/194158963
+
 
 var mouseDown = false;
 var startX;
