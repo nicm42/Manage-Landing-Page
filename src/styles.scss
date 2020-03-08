@@ -496,6 +496,7 @@ footer {
 	@media screen and (min-width: $mobile+1) {
 		grid-template-areas: "footer-logo footer-links footer-updates"
 							 "footer-social footer-links footer-copyright";
+		-ms-grid-columns: 10fr 10fr 10fr 0.1fr;  //So it works in IE11
 		align-items: start;
 		padding: 3.2rem $page-edge-desktop 2rem $page-edge-desktop;
 	}
