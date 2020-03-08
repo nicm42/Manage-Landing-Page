@@ -101,6 +101,7 @@ header {
 	@media screen and (min-width: $mobile+1) {
 		grid-template-areas: "header-logo nav header-button";
 		grid-template-columns: auto .6fr auto;
+		-ms-grid-columns: 146px 6fr 1fr;  //So it works in IE11
 		padding: 2.5rem $page-edge-desktop 5rem $page-edge-desktop;
 	}
 }
@@ -148,6 +149,11 @@ nav {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+     margin-left: 10rem;
+     margin-right: 10rem;
+	}
 	@media screen and (max-width: $mobile) {
 		position: absolute;
 		top: 5rem;
@@ -498,7 +504,6 @@ footer {
 	justify-self: center;
 	@media screen and (min-width: $mobile+1) {
 		align-self: start;
-		justify-self: start;
 	}
 
 }
@@ -513,7 +518,6 @@ footer {
 	}
 	@media screen and (min-width: $mobile+1) {
 		align-self: start;
-		justify-self: start;
 	}		
 	a {
 		padding: 0.3rem;
