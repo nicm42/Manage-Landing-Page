@@ -451,6 +451,7 @@ nav {
 	font-weight: $bold-font;
 	line-height: 2.5rem;
 	@media screen and (min-width: $mobile+1) {
+		justify-self: start;
 		align-self: center;
 		line-height: 2rem;
 		padding-bottom: 0;
@@ -503,6 +504,7 @@ footer {
 	grid-area: footer-logo;
 	justify-self: center;
 	@media screen and (min-width: $mobile+1) {
+		justify-self: start;
 		align-self: start;
 	}
 
@@ -517,6 +519,7 @@ footer {
 		width: 100%;
 	}
 	@media screen and (min-width: $mobile+1) {
+		justify-self: start;
 		align-self: start;
 	}		
 	a {
