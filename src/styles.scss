@@ -104,6 +104,11 @@ header {
 		-ms-grid-columns: 146px 6fr 1fr;  //So it works in IE11
 		padding: 2.5rem $page-edge-desktop 5rem $page-edge-desktop;
 	}
+	@media screen and (min-width: $mobile+1) and (max-width: 910px) {
+		//To stop nav links bunching up without them taking up all the space when it's bigger (as per design)
+		grid-template-columns: auto 1fr auto;
+		-ms-grid-columns: 146px 6fr 1fr;  //So it works in IE11
+	}
 }
 .header__logo {
 	grid-area: header-logo;

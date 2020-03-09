@@ -52,6 +52,10 @@ header {
       grid-template-columns: auto .6fr auto;
       -ms-grid-columns: 146px 6fr 1fr;
       padding: 2.5rem 10% 5rem 10%; } }
+  @media screen and (min-width: 641px) and (max-width: 910px) {
+    header {
+      grid-template-columns: auto 1fr auto;
+      -ms-grid-columns: 146px 6fr 1fr; } }
 
 .header__logo {
   grid-area: header-logo;
