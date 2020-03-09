@@ -50,6 +50,7 @@ header {
     header {
       grid-template-areas: "header-logo nav header-button";
       grid-template-columns: auto .6fr auto;
+      -ms-grid-columns: 146px 6fr 1fr;
       padding: 2.5rem 10% 5rem 10%; } }
 
 .header__logo {
@@ -60,7 +61,8 @@ nav {
   grid-area: nav;
   justify-self: end;
   align-self: center;
-  font-size: 0.6rem; }
+  font-size: 0.6rem;
+  font-weight: 500; }
   @media screen and (min-width: 641px) {
     nav {
       justify-self: stretch; } }
@@ -95,6 +97,11 @@ nav {
   margin: 0;
   padding: 0;
   list-style-type: none; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .nav__links {
+      /* IE10+ CSS styles go here */
+      margin-left: 10rem;
+      margin-right: 10rem; } }
   @media screen and (max-width: 640px) {
     .nav__links {
       position: absolute;
@@ -351,11 +358,14 @@ nav {
 .filled-dot {
   background-color: #f25f3a; }
 
+.sr-only {
+  display: none; }
+
 /**********************Simplify**********************/
 .simplify {
   display: grid;
   grid-template-areas: "simplify-message" "simplify-button";
-  padding: 4.5rem 5% 5rem 5%;
+  padding: 3rem 5% 4.5rem 5%;
   justify-items: center;
   color: #fafafa;
   text-align: center;
@@ -369,22 +379,21 @@ nav {
       grid-template-columns: 0.6fr 0.6fr;
       grid-column-gap: 4rem;
       align-items: center;
-      padding: 3.5rem 10% 3.5rem 10%;
+      padding: 2rem 10% 2rem 10%;
       background-image: url(images/bg-simplify-section-desktop.svg);
       background-position: 16vw bottom; } }
 
 .simplify__message {
   grid-area: simplify-message;
   justify-self: center;
-  padding-bottom: 1.3rem;
   font-size: 1.9rem;
   font-weight: 700;
   line-height: 2.5rem; }
   @media screen and (min-width: 641px) {
     .simplify__message {
+      justify-self: start;
       align-self: center;
       line-height: 2rem;
-      padding-bottom: 0;
       text-align: left; } }
 
 .simplify__button {
@@ -418,6 +427,7 @@ footer {
   @media screen and (min-width: 641px) {
     footer {
       grid-template-areas: "footer-logo footer-links footer-updates" "footer-social footer-links footer-copyright";
+      -ms-grid-columns: 10fr 10fr 10fr 0.1fr;
       align-items: start;
       padding: 3.2rem 10% 2rem 10%; } }
 
@@ -426,8 +436,8 @@ footer {
   justify-self: center; }
   @media screen and (min-width: 641px) {
     .footer__logo {
-      align-self: start;
-      justify-self: start; } }
+      justify-self: start;
+      align-self: start; } }
 
 .footer__social {
   grid-area: footer-social;
@@ -440,8 +450,8 @@ footer {
       width: 100%; } }
   @media screen and (min-width: 641px) {
     .footer__social {
-      align-self: start;
-      justify-self: start; } }
+      justify-self: start;
+      align-self: start; } }
   .footer__social a {
     padding: 0.3rem; }
     @media screen and (min-width: 641px) {

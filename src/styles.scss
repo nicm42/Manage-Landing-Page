@@ -114,6 +114,7 @@ nav {
 	justify-self: end;
 	align-self: center;
 	font-size: $very-small-text;
+	font-weight: $medium-font;
 	@media screen and (min-width: $mobile+1) {
 		justify-self: stretch;
 	}
@@ -419,13 +420,16 @@ nav {
 .filled-dot {
 	background-color: $bright-red;
 }
+.sr-only {
+	display: none;
+}
 
 /**********************Simplify**********************/
 .simplify {
 	display: grid;
 	grid-template-areas: "simplify-message"
 						  "simplify-button";
-	padding: 4.5rem $page-edge-mobile 5rem $page-edge-mobile;
+	padding: 3rem $page-edge-mobile 4.5rem $page-edge-mobile;
 	justify-items: center;
 	color: $very-light-grey;
 	text-align: center;
@@ -438,7 +442,7 @@ nav {
 		grid-template-columns: $grid-column-size;
 		grid-column-gap: $column-gap;
 		align-items: center;
-		padding: 3.5rem $page-edge-desktop 3.5rem $page-edge-desktop;
+		padding: 2rem $page-edge-desktop 2rem $page-edge-desktop;
 		background-image: url(images/bg-simplify-section-desktop.svg);
 		background-position: 16vw bottom;
 	}
@@ -446,7 +450,6 @@ nav {
 .simplify__message {
 	grid-area: simplify-message;
 	justify-self: center;
-	padding-bottom: 1.3rem;
 	font-size: 1.9rem;
 	font-weight: $bold-font;
 	line-height: 2.5rem;
@@ -454,7 +457,6 @@ nav {
 		justify-self: start;
 		align-self: center;
 		line-height: 2rem;
-		padding-bottom: 0;
 		text-align: left;
 	}
 }
